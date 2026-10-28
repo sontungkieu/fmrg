@@ -1,0 +1,27 @@
+{
+  "protocol": "fmrg-b200-runtime-v1",
+  "source_repo": "https://github.com/jrrhuang/fmrg",
+  "source_commit": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+  "base_image": "docker.io/library/ubuntu:22.04@sha256:0a9887931b0e38af2e3487ed39e29436b0535c4f3f52e57745baaf79d1898956",
+  "python": "3.11.14",
+  "uv": "0.9.3",
+  "clip_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+  "torch": "2.7.1+cu128",
+  "torchvision": "0.22.1+cu128",
+  "diffusers": "0.34.0",
+  "transformers": "4.56.2",
+  "attention": "torch SDPA default; no external flash-attn",
+  "base_model": {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "gated": true,
+    "allow_patterns": ["model_index.json", "scheduler/*", "text_encoder/*", "text_encoder_2/*", "tokenizer/*", "tokenizer_2/*", "transformer/*", "vae/*", "LICENSE.md"]
+  },
+  "flowmap": {
+    "repo": "gabeguofanclub/flux-1-dev-flowmap-lsd",
+    "revision": "cb28310c38f6cf595973f7a09b13927978e35a1e",
+    "license_metadata": "absent; do not infer unrestricted use",
+    "256": {"file": "01-05-26/runs/uniform_half_plane_lr_3e-4/checkpoint-8500/pytorch_lora_weights.safetensors", "bytes": 361133344, "sha256": "1ac550f6800fb086986643475ba9ebbec7bb84bd87b9cab3573ec693332232be"},
+    "512": {"file": "01-12-26/runs/res_512_steps_50k_rank_64_lr_1e-4/checkpoint-43000/pytorch_lora_weights.safetensors", "bytes": 722171448, "sha256": "843627e2824e152efc7f3656667d061fb2ab7b9697233203ec1db456353564f8"}
+  }
+}

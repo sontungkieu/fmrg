@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-10-27T20:35:47.557452+00:00",
+  "authentication": "none",
+  "repo": "codemaivanngu/fmrg-b200-portable",
+  "commit": "73353f15eab0024925c942d197a7ed39a71aca0d",
+  "manifest_sha256_verified": true,
+  "checks": [
+    {
+      "path": "runtime/runtime.tar.gz",
+      "anonymous_head": 200,
+      "head_bytes": "4275503585",
+      "small_file_download_hash_verified": false
+    },
+    {
+      "path": "assets/assets.tar",
+      "anonymous_head": 200,
+      "head_bytes": "38783272960",
+      "small_file_download_hash_verified": false
+    },
+    {
+      "path": "manifests/archive-audit.json",
+      "anonymous_head": 200,
+      "head_bytes": "1618",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "manifests/assets-manifest.json",
+      "anonymous_head": 200,
+      "head_bytes": "8082",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "results/pilot-results.tar.gz",
+      "anonymous_head": 200,
+      "head_bytes": "25483498",
+      "small_file_download_hash_verified": false
+    },
+    {
+      "path": "source/setup-source.tar.gz",
+      "anonymous_head": 200,
+      "head_bytes": "20707",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "manifests/source-receipt.json",
+      "anonymous_head": 200,
+      "head_bytes": "153",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "setup_public.sh",
+      "anonymous_head": 200,
+      "head_bytes": "5946",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "README.md",
+      "anonymous_head": 200,
+      "head_bytes": "3934",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "results/PILOT_RESULTS.md",
+      "anonymous_head": 200,
+      "head_bytes": "3451",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "manifests/pins.json",
+      "anonymous_head": 200,
+      "head_bytes": "1496",
+      "small_file_download_hash_verified": true
+    },
+    {
+      "path": "licenses/LICENSE.md",
+      "anonymous_head": 200,
+      "head_bytes": "18621",
+      "small_file_download_hash_verified": true
+    }
+  ],
+  "large_file_hash_evidence": "HF LFS metadata matched remote uploader SHA; no large laptop download"
+}

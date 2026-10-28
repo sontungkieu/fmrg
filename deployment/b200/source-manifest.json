@@ -1,0 +1,18 @@
+{
+  "upstream_commit": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+  "files": {
+    "PUBLIC_SETUP.md": "38b21d47d08fc38802d1c2562b164de8942077e1c2c209cc9eed399eb539b57c",
+    "runtime/setup_public.sh": "85c167e873accd0ff0edccf9f49446bffeff120ecf8e92e0fbee27b41534dcba",
+    "runtime/install_node.sh": "310bd0041ce2dc847831f672d02bfcb1b346af46dfd15e85739b281dd041e50c",
+    "runtime/pins.json": "ef3daa666b497595ee8dd61211a876a246c86f51e340504fc77800772241146c",
+    "runtime/source-manifest.json": "051cb7891ff9bdc846eb49c7ca0d3e1cb902b5b21ea0d8a13d9447c421102dd9",
+    "runtime/requirements.in": "69b04de6b7eee0643963004f5ec58cfe84575e4b20efb79f6eafdfdf21e39bcc",
+    "experiments/restore_assets.py": "f8ed084376dbba8028b15229cf493e87e8d2c85a6405332e7e5e96451ae4de1b",
+    "experiments/pilot_ip.py": "0a833303f450ebac3dcdf53f008fbe8e667e666594cf0b754aea7648ebcb401c",
+    "experiments/pilot_reward.py": "7f37020f5e7f8bd21de4e2bf2e6d1bdb985cea9db8487ba09e891fb1c79b50c9",
+    "experiments/gaussian.py": "848484136c141eaee2db3cf03295413882721205d2af95203f21ad41b685db0a",
+    "results/shortlist-20261026/PILOT_RESULTS.md": "f754965a94044e898a745c59baa57023ff4024f0f5d8aa784fe36b07ac8fa5cf",
+    "results/shortlist-20261026/I-grouped.csv": "bb0e7cc49c15650d0a477ac228145bd929e9143e5d1f2497719c347bc64ea342",
+    "results/shortlist-20261026/J-grouped.csv": "78915cbb75dded88756a976036bd21f663df0a796ce64567d7ba4751c8a008df"
+  }
+}

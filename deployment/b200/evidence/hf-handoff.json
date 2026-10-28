@@ -1,0 +1,11 @@
+{
+  "repo": "codemaivanngu/fmrg-b200-portable",
+  "commit": "6352766e35c892ec51d70dcf79e5c4968a15de7e",
+  "files": [
+    "HANDOFF.md",
+    "README.md"
+  ],
+  "handoff_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/blob/6352766e35c892ec51d70dcf79e5c4968a15de7e/HANDOFF.md",
+  "anonymous_download_verified": true,
+  "sha256": "06bebbc78965094e187f341dd3bd81fee12c51a24190d713ca7b04426a1b305c"
+}

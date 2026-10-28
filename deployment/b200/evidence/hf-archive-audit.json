@@ -1,0 +1,44 @@
+{
+  "status": "AUDITED_PUBLIC_PACKAGE",
+  "runtime": {
+    "file": "runtime-public.tar.gz",
+    "bytes": 4275503585,
+    "sha256": "06ef365e64d7dcccd7507ac3435f46bf25b724679b65c8e1a8d7a060958f43ff",
+    "parent_sha256": "56832c3a1ef71c6911a08c16d58e4993b92dc451abeb2adbcc87430d337b369b",
+    "prefix": "/opt/fmrg",
+    "dependency_bytes_changed": false,
+    "tools_retained": [
+      "opt/fmrg/tools/pins.json",
+      "opt/fmrg/tools/source-manifest.json",
+      "opt/fmrg/tools/gates.py",
+      "opt/fmrg/tools/requirements.in",
+      "opt/fmrg/tools/stage_assets.py"
+    ],
+    "removed_packaging_files": "All tools files except the explicit retained allowlist",
+    "members": 36815
+  },
+  "assets": {
+    "file": "assets.tar",
+    "bytes": 38783272960,
+    "sha256": "4632c8d2471f5152eccd5e3c32c570389d1c7973dc9fbfae06931fd92260b1ab",
+    "historical_private_label": true,
+    "public_authorized": "2026-10-28"
+  },
+  "secret_candidates": [],
+  "reviewed_false_positives": [
+    {
+      "file": "opt/fmrg/venv/lib/python3.11/site-packages/PIL/ImageFont.py",
+      "match_sha256": "57a26f03da1274be9ce14c3b04dd685a62f78c9424d2e34addf2d925f55b86fe",
+      "classification": "embedded default-font bytes; not AWS credentials"
+    },
+    {
+      "file": "opt/fmrg/venv/lib/python3.11/site-packages/transformers/testing_utils.py",
+      "match_sha256": "5de261506c0ff857b7c1af7059f842fb0a36d1ca2e4895da542c5eb726f2c802",
+      "classification": "official v4.56.2 sandbox-CI test fixture; upstream file byte-verified"
+    }
+  ],
+  "license_files": [
+    "assets/flux/LICENSE.md"
+  ],
+  "elapsed_seconds": 231.084333998
+}

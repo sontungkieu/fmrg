@@ -180,3 +180,12 @@ fmrg/
 ## Acknowledgments
 
 This repository builds on the codebase of [FlowDPS](https://github.com/FlowDPS-Inverse/FlowDPS).
+
+## Portable B200 runtime and company replay
+
+See [deployment/b200](deployment/b200/README.md) for the public HF runtime/assets,
+[agent prompt](deployment/b200/AGENT_PROMPT.md), pinned download handoff, and pilot
+reference results. The deployment overlay preserves the qualified scientific
+source at `be485ba40f1d1c163b95ad61112aca6baa13ed22`; deployment Git revisions and
+runtime/model identities are recorded separately. Company qualification and full
+paper reproduction remain separate from the completed Modal screening.

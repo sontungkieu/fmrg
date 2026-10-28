@@ -1,0 +1,88 @@
+{
+  "repo": "codemaivanngu/fmrg-b200-portable",
+  "repo_type": "dataset",
+  "private": false,
+  "commit": "73353f15eab0024925c942d197a7ed39a71aca0d",
+  "files": [
+    {
+      "path": "runtime/runtime.tar.gz",
+      "bytes": 4275503585,
+      "sha256": "06ef365e64d7dcccd7507ac3435f46bf25b724679b65c8e1a8d7a060958f43ff",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/runtime/runtime.tar.gz"
+    },
+    {
+      "path": "assets/assets.tar",
+      "bytes": 38783272960,
+      "sha256": "4632c8d2471f5152eccd5e3c32c570389d1c7973dc9fbfae06931fd92260b1ab",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/assets/assets.tar"
+    },
+    {
+      "path": "manifests/archive-audit.json",
+      "bytes": 1618,
+      "sha256": "52db5d07c95296b63c868051c6d981a6169b9817df940a4afbf95920e22701e4",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/manifests/archive-audit.json"
+    },
+    {
+      "path": "manifests/assets-manifest.json",
+      "bytes": 8082,
+      "sha256": "f15dd4d3c19df56f7ff5fb24c76d906a464cfe790018f85462e9abab15c6427c",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/manifests/assets-manifest.json"
+    },
+    {
+      "path": "results/pilot-results.tar.gz",
+      "bytes": 25483498,
+      "sha256": "5b26bbeb897f59f8c1c7d16b59dcc7c63eaaaf1447a58a7a0cc7b1d481f6cbc7",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/results/pilot-results.tar.gz"
+    },
+    {
+      "path": "source/setup-source.tar.gz",
+      "bytes": 20707,
+      "sha256": "f8a08684d2dca071340706c746dd7e1867931f8866bcc5cf6cdbab11a95682da",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/source/setup-source.tar.gz"
+    },
+    {
+      "path": "manifests/source-receipt.json",
+      "bytes": 153,
+      "sha256": "ad42786d14c107ccfb04d97b0e497b82beec71253e9b37b0075cad7787b03c04",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/manifests/source-receipt.json"
+    },
+    {
+      "path": "setup_public.sh",
+      "bytes": 5946,
+      "sha256": "85c167e873accd0ff0edccf9f49446bffeff120ecf8e92e0fbee27b41534dcba",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/setup_public.sh"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3934,
+      "sha256": "38b21d47d08fc38802d1c2562b164de8942077e1c2c209cc9eed399eb539b57c",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/README.md"
+    },
+    {
+      "path": "results/PILOT_RESULTS.md",
+      "bytes": 3451,
+      "sha256": "f754965a94044e898a745c59baa57023ff4024f0f5d8aa784fe36b07ac8fa5cf",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/results/PILOT_RESULTS.md"
+    },
+    {
+      "path": "manifests/pins.json",
+      "bytes": 1496,
+      "sha256": "ef3daa666b497595ee8dd61211a876a246c86f51e340504fc77800772241146c",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/manifests/pins.json"
+    },
+    {
+      "path": "licenses/LICENSE.md",
+      "bytes": 18621,
+      "sha256": "6f7b3d94ddd94380a4dc2d1211ed57883d320dea96f4393b34d4a454041029e1",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/73353f15eab0024925c942d197a7ed39a71aca0d/licenses/LICENSE.md"
+    }
+  ],
+  "runtime_parent_sha256": "56832c3a1ef71c6911a08c16d58e4993b92dc451abeb2adbcc87430d337b369b",
+  "qualification": "Parent archive qualified on Modal B200; public packaging removes cloud ops scripts only; no company run",
+  "publication_manifest": {
+    "commit": "032f4d0b6191729a22a3b715f12a5ba59e9c66ad",
+    "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/032f4d0b6191729a22a3b715f12a5ba59e9c66ad/publication.json",
+    "sha256": "0418abaa347a14216168ceeb5f45fc52919ac8daebc657ad3f7c55755518f3bc",
+    "bytes": 4130
+  }
+}
