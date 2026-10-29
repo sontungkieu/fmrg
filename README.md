@@ -27,6 +27,13 @@ order-of-magnitude speedup in comparison to prior state of the art.
 
 ## Installation
 
+For the portable B200 runtime and company workflow, see
+[deployment/b200](deployment/b200/README.md). The
+[2026-10-29 full-paper audit and handoff](deployment/b200/full_paper/FULL_PAPER_HANDOFF.md)
+provides immutable HF evaluator assets and explicit paper/source contracts.
+Full benchmark execution remains disabled pending the recorded blockers and
+separate launch authorization.
+
 ```bash
 git clone https://github.com/jrrhuang/fmrg.git
 cd fmrg

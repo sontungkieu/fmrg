@@ -1,5 +1,13 @@
 # Portable B200 setup and company replay
 
+The 2026-10-29 preparation is in
+[full_paper/FULL_PAPER_HANDOFF.md](full_paper/FULL_PAPER_HANDOFF.md): audited
+paper/source differences, immutable HF evaluator downloads, offline setup and
+canaries. [CONTRACT.json](full_paper/CONTRACT.json) keeps full launch disabled.
+The company screening is closed as user-reported replay completion, without
+bitwise parity or established distribution equivalence. Do not rerun it simply
+because this preparation has a newer handoff.
+
 Start with [AGENT_PROMPT.md](AGENT_PROMPT.md) for a copy-paste assignment and
 [HANDOFF_SETUP_AGENT.md](HANDOFF_SETUP_AGENT.md) for immutable HF downloads,
 checksums and the setup command. The public distribution is

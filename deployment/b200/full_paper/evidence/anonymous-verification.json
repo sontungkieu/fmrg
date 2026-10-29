@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-28T21:48:03.162267+00:00",
+  "authentication": "none",
+  "asset_manifest_verified": true,
+  "publication_manifest_verified": true,
+  "toolkit_full_sha_verified": true,
+  "handoff_sha_verified": true,
+  "asset_checks": [
+    {
+      "path": "full-paper/20261029/assets/bert/README.md",
+      "anonymous_head": 200,
+      "bytes": 10517,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/bert/config.json",
+      "anonymous_head": 200,
+      "bytes": 570,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/bert/tokenizer.json",
+      "anonymous_head": 200,
+      "bytes": 466062,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/bert/tokenizer_config.json",
+      "anonymous_head": 200,
+      "bytes": 48,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/bert/vocab.txt",
+      "anonymous_head": 200,
+      "bytes": 231508,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/geneval/ViT-L-14.pt",
+      "anonymous_head": 200,
+      "bytes": 932768134,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/geneval/mask2former_r50_lsj_8x2_50e_coco.pth",
+      "anonymous_head": 200,
+      "bytes": 176473467,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/geneval/mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco.pth",
+      "anonymous_head": 200,
+      "bytes": 275630991,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/hps/HPS_v2.1_compressed.pt",
+      "anonymous_head": 200,
+      "bytes": 1972490005,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/hps/README.md",
+      "anonymous_head": 200,
+      "bytes": 28,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/imagereward/ImageReward.pt",
+      "anonymous_head": 200,
+      "bytes": 1786880927,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/imagereward/README.md",
+      "anonymous_head": 200,
+      "bytes": 3158,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/imagereward/med_config.json",
+      "anonymous_head": 200,
+      "bytes": 485,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/metrics/lpips-v0.1-vgg.pth",
+      "anonymous_head": 200,
+      "bytes": 7289,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/metrics/torch_fidelity-0.3.0-py3-none-any.whl",
+      "anonymous_head": 200,
+      "bytes": 37012,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/metrics/vgg16-397923af.pth",
+      "anonymous_head": 200,
+      "bytes": 553433881,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/metrics/weights-inception-2015-12-05-6726825d.pth",
+      "anonymous_head": 200,
+      "bytes": 95628359,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/paper/2604.27147v3.pdf",
+      "anonymous_head": 200,
+      "bytes": 37791034,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/README.md",
+      "anonymous_head": 200,
+      "bytes": 3227,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/config.json",
+      "anonymous_head": 200,
+      "bytes": 4514,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/merges.txt",
+      "anonymous_head": 200,
+      "bytes": 524619,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/model.safetensors",
+      "anonymous_head": 200,
+      "bytes": 3944552236,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/preprocessor_config.json",
+      "anonymous_head": 200,
+      "bytes": 556,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/special_tokens_map.json",
+      "anonymous_head": 200,
+      "bytes": 472,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/tokenizer.json",
+      "anonymous_head": 200,
+      "bytes": 2224119,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/tokenizer_config.json",
+      "anonymous_head": 200,
+      "bytes": 775,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    },
+    {
+      "path": "full-paper/20261029/assets/pickscore/vocab.json",
+      "anonymous_head": 200,
+      "bytes": 862328,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/sources/evaluator-source.tar.gz",
+      "anonymous_head": 200,
+      "bytes": 23022501,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/style/ViT-B-16.pt",
+      "anonymous_head": 200,
+      "bytes": 350837078,
+      "metadata_sha_verified": true,
+      "small_GET_SHA_verified": false
+    },
+    {
+      "path": "full-paper/20261029/assets/vlm/README.md",
+      "anonymous_head": 200,
+      "bytes": 9380,
+      "metadata_sha_verified": false,
+      "small_GET_SHA_verified": true
+    }
+  ],
+  "large_file_evidence": "Anonymous HEAD + public HF LFS size/SHA metadata + remote uploader full SHA. No large laptop downloads.",
+  "source_files_match_public_toolkit": true
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "SYNTHETIC_METRIC_CODE_CANARY",
+  "device": "cpu",
+  "lpips_identity": 0.0,
+  "lpips_perturbed": 0.0066795311868190765,
+  "input_gradient_norm": 0.008097774349153042,
+  "fid_feature_samples": 2,
+  "fid_features_finite": true,
+  "fid_dataset_score": "NOT_COMPUTED",
+  "scientific_result": false,
+  "status": "PASS"
+}

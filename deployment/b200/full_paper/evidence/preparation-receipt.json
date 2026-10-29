@@ -1,0 +1,55 @@
+{
+  "checked_at_utc": "2026-10-28T21:49:43.453840+00:00",
+  "period_start": "2026-10-26",
+  "period_end_exclusive": "2026-10-30",
+  "source": "Modal provider billing report; may lag, not final invoice",
+  "task_reported_usd": {
+    "fmrg-shortlist-20261026-v1": "0.66986507",
+    "fmrg-b200-runtime-20261026": "0.48596614",
+    "fmrg-hf-publication-20261028": "1.69143202",
+    "fmrg-full-paper-prep-20261029": "0.40196609"
+  },
+  "preparation_resources_usd": {
+    "Memory": "0.01218433",
+    "CPU": "0.00901360",
+    "Network Egress": "0.38076816"
+  },
+  "cumulative_fmrg_reported_usd": "3.24922932",
+  "original_cumulative_cap_usd": "10",
+  "preparation_reserved_ceiling_usd": "2",
+  "gpu_resources_this_preparation": false,
+  "full_benchmark_launched": false,
+  "company_node_accessed": false,
+  "apps": [
+    {
+      "app_id": "ap-YA4kQKQCDX1JeiGfvv6i1y",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-Ot40juhHgQws8cuR6CuFkR",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-Uf0OXiYktOumPyOLQW4nXm",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-XJ4sZp7FZL963vVRGRMrzq",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-3HOuW9UpJIPABUF5sGcAHk",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-o5BPRhMvQOTeZtpSEN6Go3",
+      "state": "stopped",
+      "tasks": 0
+    }
+  ]
+}

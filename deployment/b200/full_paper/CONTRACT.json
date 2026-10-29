@@ -1,0 +1,319 @@
+{
+  "protocol": "fmrg-full-paper-contract-v1",
+  "date": "2026-10-29",
+  "status": "AUDIT_COMPLETE_PREPARATION_PARTIAL_FULL_BLOCKED",
+  "full_launch_allowed": false,
+  "paper": {
+    "id": "2604.27147v3",
+    "url": "https://arxiv.org/html/2604.27147v3",
+    "pdf_sha256": "640ff820d4b7dea270ebf8687ff29dbc476d9c08d63af0294f6b564eb8de2281",
+    "pages": 58,
+    "license": "CC-BY-4.0"
+  },
+  "scientific_source": {
+    "repo": "https://github.com/jrrhuang/fmrg",
+    "commit": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+    "files_sha256": {
+      "fluxfm_sampler_ip.py": "8da781f6902d3c8839603e20fbb8ed0adfc0e5721666806999a106b45bf08cdc",
+      "fluxfm_sampler_reward.py": "9b65995fc8eb247dfb9f5ddd2c7d5b94e8463cf9d97120358190c76e953a2b4e",
+      "scripts/solve_inverse_problem.py": "924288546c5c3e027d3a86a9d4a17a65b3bff4a1e25b4590b4806889ba5b8c1b",
+      "scripts/generate_geneval.py": "7b3bbbc1075f0b8bcbb9a0060bb7288e6502aa13f73e18cde87e9a508de8c4b2",
+      "scripts/aggregate_metrics.py": "1dc65de15f5eb480b8884e57c1337496f53716c80b55d11a43b0bbba64adab43",
+      "experiments/geneval_nfe_sweep/generate_fmrg.sh": "efce468354c04b9ddf8c40512cc0e455ecf7860ac62f8fee3a23341a3c69355e",
+      "data/geneval_prompts/evaluation_metadata.jsonl": "47db8a1a9139f1f08786b5957671455a965636fc895852ab3e655961019f507c"
+    }
+  },
+  "runtime": {
+    "torch": "2.7.1+cu128",
+    "python": "3.11.14",
+    "attention": "SDPA",
+    "immutable_core_unchanged": true
+  },
+  "assets": {
+    "asset_commit": "10eb27b54ba7db3d44637efe59f8101f2edd92c3",
+    "asset_manifest_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/10eb27b54ba7db3d44637efe59f8101f2edd92c3/full-paper/20261029/asset-manifest.json",
+    "asset_manifest_sha256": "a3963d58f982ec28f1a97cb512a94067838d27be235bc23a381eb3649d77dcc4",
+    "files": 30,
+    "bytes": 10153895280,
+    "failed_files": [
+      {
+        "component": "vlm",
+        "filename": "added_tokens.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "chat_template.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "config.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "generation_config.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "merges.txt",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "model-00001-of-00004.safetensors",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "model-00002-of-00004.safetensors",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "model-00003-of-00004.safetensors",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "model-00004-of-00004.safetensors",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "model.safetensors.index.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "preprocessor_config.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "special_tokens_map.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "tokenizer.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "tokenizer_config.json",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "value_head.safetensors",
+        "error": "GatedRepoError"
+      },
+      {
+        "component": "vlm",
+        "filename": "vocab.json",
+        "error": "GatedRepoError"
+      }
+    ]
+  },
+  "tracks": {
+    "paper_formula_v1": {
+      "status": "SPECIFICATION_ONLY_NOT_IMPLEMENTED_OR_QUALIFIED",
+      "data_time": "t=0 noise -> t=1 data; sigma=1-t",
+      "inverse_loss": "sum((A(D(z))-y)**2) in pixel observation space; reward is negative loss",
+      "E_weight": "eta * t_cur * (1-t_next) = eta * (1-sigma_cur) * sigma_next",
+      "J_weight": "eta * delta_t; unit gradient rescaled to velocity norm",
+      "early_stop": "guide until declared data-time cutoff then one separate unguided map to data",
+      "inverse": {
+        "resolution": 256,
+        "cfg": 3.5,
+        "E": {
+          "steps": 50,
+          "NFE_table": 100,
+          "eta": 6,
+          "nopt": 5,
+          "t_stop": 0.67
+        },
+        "J": {
+          "steps": 200,
+          "NFE_table": 400,
+          "eta_AFHQ": 5,
+          "eta_FFHQ": 3,
+          "nopt": 1,
+          "t_stop": 1
+        },
+        "higher_NFE_mode": "flow_map2",
+        "tasks": 3,
+        "datasets": 2
+      },
+      "reward": {
+        "resolution": 512,
+        "weights": {
+          "hps": 5,
+          "imagereward": 1,
+          "clip": 0.01,
+          "pickscore": 0.05
+        },
+        "geneval_prompts": 553,
+        "seeds_count": 4,
+        "seeds_exact_paper": null,
+        "selection_particles": 3,
+        "t_stop": 0.25,
+        "configs": [
+          {
+            "method": "E",
+            "NFE_table": 100,
+            "eta": 0.7,
+            "nopt": 3,
+            "mode": "flow_map2"
+          },
+          {
+            "method": "J",
+            "NFE_table": 20,
+            "eta": 3,
+            "nopt": 1,
+            "mode": "endpoint reuse"
+          },
+          {
+            "method": "J",
+            "NFE_table": 100,
+            "eta": 5,
+            "nopt": 1,
+            "mode": "flow_map2"
+          }
+        ],
+        "score": "Mean of six category accuracies; pool samples across four seeds before each category accuracy."
+      },
+      "style": {
+        "reward": "CLIP ViT-B/16 layer-2 Gram matrix",
+        "resolution": 256,
+        "style_references": 16,
+        "prompts": 48,
+        "NFE_budget": 100
+      },
+      "vlm": {
+        "repo": "Skywork/Skywork-VL-Reward-7B",
+        "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+        "query": "Is \"{prompt}\" a correct caption for the image?",
+        "reward": "sigmoid(last-token logit[Yes] - last-token logit[No]); not scalar value head",
+        "guided_steps": 20,
+        "eta": 1,
+        "K": 4,
+        "renoise_c": null
+      }
+    },
+    "released_code_v1": {
+      "status": "SCIENTIFIC_SOURCE_PINNED_NOT_FULL_QUALIFIED",
+      "commit": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+      "inverse_defaults": {
+        "loss_func": "norm",
+        "loss_mode": "latent"
+      },
+      "latent_meaning": "Pseudo-inverse/transpose weighted observation residual, not VAE-latent image discrepancy.",
+      "E_weight": "eta * sigma_cur * (1-sigma_next)",
+      "IP_early_stop": "truncate time_steps[:k] + [0]; final jump is still in guided loop",
+      "reward_optimizer": "generate_geneval.py forces Adam with decaying LR; Adam branch returns before grad_norm_mode normalization",
+      "release_seed_values": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "trace_file": "evidence/control-flow-trace.json",
+      "trace_scope": "Synthetic velocity/reward on CPU; actual pinned sampler control flow. Does not measure neural cost or quality."
+    }
+  },
+  "metrics": {
+    "released_PSNR": "PNG RGB range255",
+    "released_SSIM": "pytorch_msssim on range255 with defaults",
+    "released_LPIPS": "VGG, resize224 bilinear, tensor[0,1], normalize=False",
+    "standard_LPIPS_candidate": "Separate sensitivity profile with inputs[-1,1], native resolution; do not mix scores with release profile",
+    "FID": "torchmetrics 1.3.2, inception2048, RGB resized299 bilinear/antialias then uint8, normalize=False",
+    "KID": "subset_size=min(50,N), 100 subsets default; released aggregator does not explicitly freeze RNG",
+    "aggregation_risks": [
+      "Released aggregator silently skips malformed/missing metadata and intersects filename sets. Full evaluator must assert expected IDs/counts first.",
+      "Bootstrap paired image-level metrics by image ID; repeated settings/seeds are clustered. Recompute dataset FID for any resampling; do not average per-image FID.",
+      "Mean CI is uncertainty, not an equivalence test; equivalence requires predeclared margins and design."
+    ]
+  },
+  "acceptance": {
+    "required_fields": [
+      "contract_sha256",
+      "track",
+      "source_sha",
+      "runtime_sha",
+      "asset_manifest_sha",
+      "dataset_manifest_sha",
+      "actual_grid",
+      "seed",
+      "image_id",
+      "measurement_sha",
+      "resolved_config",
+      "allocation_receipt",
+      "attempt_id"
+    ],
+    "completeness": "Expected unique cells and image IDs exact; failed/missing explicit, never zero-filled or silently intersected",
+    "compute": [
+      "transformer_forward",
+      "checkpoint_recompute",
+      "backward/autograd.grad/Tensor.backward",
+      "VAE_encode/decode",
+      "reward_model_forward/backward",
+      "warmup_K_selection",
+      "discarded_particles",
+      "tuning_runs",
+      "wall_time",
+      "peak_VRAM"
+    ],
+    "no_full_launch_until": "All blockers closed in a new reviewed manifest and user explicitly authorizes full execution."
+  },
+  "blockers": [
+    {
+      "id": "DATA_SPLITS",
+      "status": "NEEDS_AUTHOR_ARTIFACT_OR_EXPLICIT_RECONSTRUCTED_SPLIT",
+      "detail": "AFHQ-Dog/FFHQ exact 50+1000 IDs, hashes, alignment/preprocessing provenance not supplied."
+    },
+    {
+      "id": "PAPER_RELEASE_SEMANTICS",
+      "status": "AUDITED_DIVERGENCE_ADAPTER_NOT_IMPLEMENTED",
+      "detail": "Loss, E time weight, early-stop tail, reward Adam/gradient normalization; no silent paper-faithful claim."
+    },
+    {
+      "id": "TUNING_AND_COMPUTE",
+      "status": "INCOMPLETE",
+      "detail": "Full search grid, selection objective/tie break, all seeds and actual forward/backward/recompute/selection cost not frozen."
+    },
+    {
+      "id": "REWARD_B200",
+      "status": "WEIGHTS_STAGED_GPU_CANARY_PENDING",
+      "detail": "Offline ensemble overlay provided; no four-model forward/backward on company B200 yet."
+    },
+    {
+      "id": "GENEVAL",
+      "status": "NATIVE_RUNTIME_AND_DETECTOR_CHOICE_UNRESOLVED",
+      "detail": "Paper R50 vs official evaluator default Swin-S. Both weights/source staged; old mmcv ABI not present in cu128 generation runtime."
+    },
+    {
+      "id": "VLM_ACCESS",
+      "status": "GATED_HF_ACCESS_DENIED",
+      "detail": "codemaivanngu lacks Skywork approval; 16 required files failed, README only. No gate bypass or terms acceptance."
+    },
+    {
+      "id": "VLM_PAPER_ADAPTER",
+      "status": "MISSING_RELEASED_RUNNER_AND_RENOISE_C",
+      "detail": "Paper Yes/No token logits differ from published scalar value head. Differentiable image preprocessing and constant c unresolved."
+    },
+    {
+      "id": "STYLE",
+      "status": "MISSING_PAIRED_ASSETS_AND_EXACT_CONFIGS",
+      "detail": "16 style refs + 48 generated paired prompts and complete chosen configs absent; ViT-B/16 weights staged."
+    },
+    {
+      "id": "ALLOCATION",
+      "status": "NOT_APPROVED_FOR_FULL",
+      "detail": "Current company allocation/deadline and full-matrix resource ceiling not supplied; user forbids full launch."
+    }
+  ]
+}

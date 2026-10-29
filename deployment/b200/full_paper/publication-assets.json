@@ -1,0 +1,89 @@
+{
+  "asset_commit": "10eb27b54ba7db3d44637efe59f8101f2edd92c3",
+  "asset_manifest_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/10eb27b54ba7db3d44637efe59f8101f2edd92c3/full-paper/20261029/asset-manifest.json",
+  "asset_manifest_sha256": "a3963d58f982ec28f1a97cb512a94067838d27be235bc23a381eb3649d77dcc4",
+  "files": 30,
+  "bytes": 10153895280,
+  "failed_files": [
+    {
+      "component": "vlm",
+      "filename": "added_tokens.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "chat_template.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "config.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "generation_config.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "merges.txt",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "model-00001-of-00004.safetensors",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "model-00002-of-00004.safetensors",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "model-00003-of-00004.safetensors",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "model-00004-of-00004.safetensors",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "model.safetensors.index.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "preprocessor_config.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "special_tokens_map.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "tokenizer.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "tokenizer_config.json",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "value_head.safetensors",
+      "error": "GatedRepoError"
+    },
+    {
+      "component": "vlm",
+      "filename": "vocab.json",
+      "error": "GatedRepoError"
+    }
+  ]
+}

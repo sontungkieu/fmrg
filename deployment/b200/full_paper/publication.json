@@ -1,0 +1,20 @@
+{
+  "repo": "codemaivanngu/fmrg-b200-portable",
+  "private": false,
+  "toolkit_commit": "77f4ae1dee744fbfa906eaf3f9cd00b66a344594",
+  "publication_commit": "4973c68ccc4e088f5634e53c0dd63e38f0d17e65",
+  "handoff_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/4973c68ccc4e088f5634e53c0dd63e38f0d17e65/full-paper/20261029/FULL_PAPER_HANDOFF.md",
+  "handoff_sha256": "6d989c53b299ff9768ca93f5093ee72e222e556eeb84e4f362bbd66fdbbe02b5",
+  "publication_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/4973c68ccc4e088f5634e53c0dd63e38f0d17e65/full-paper/20261029/publication.json",
+  "publication_sha256": "25bda52aab0496463b8314f918e04b843a30e8bfd6d649304949c6e1de7774b6",
+  "toolkit": {
+    "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/77f4ae1dee744fbfa906eaf3f9cd00b66a344594/full-paper/20261029/full-paper-toolkit.tar.gz",
+    "sha256": "3820e3fc6948381200beb640df71b3e06cbee8d404c0110efed55b9b34f21525",
+    "bytes": 26840
+  },
+  "contract": {
+    "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/77f4ae1dee744fbfa906eaf3f9cd00b66a344594/full-paper/20261029/toolkit/CONTRACT.json",
+    "sha256": "1b02425b2c9d6c447bc7350f2d168c35af6b2e06bf6f904d43ca745eb098b3cb"
+  },
+  "full_launch_allowed": false
+}

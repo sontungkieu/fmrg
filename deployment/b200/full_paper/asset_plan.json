@@ -1,0 +1,462 @@
+{
+  "protocol": "fmrg-full-paper-prep-v1",
+  "scope": "ASSET_STAGING_ONLY_NO_FULL",
+  "target_repo": "codemaivanngu/fmrg-b200-portable",
+  "prefix": "full-paper/20261029",
+  "scientific_source": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+  "runtime_image": "im-XG6HmQXl7ZekRR6D0lHIKa",
+  "geneval_source": "af4902f24d3ca90ebbb446dd9891a59e0f82725f",
+  "mmdetection_source": "e9cae2d0787cd5c2fc6165a6061f92fa09e48fb1",
+  "files": [
+    {
+      "kind": "hf",
+      "component": "hps",
+      "repo": "xswu/HPSv2",
+      "revision": "697403c78157020a1ae59d23f111aa58ced35b0a",
+      "filename": "HPS_v2.1_compressed.pt",
+      "bytes": 1972490005,
+      "sha256": "c57a38fb4a2f7e7c15bf00da2ea377cdf165448b4dd1052a484c215a998c9837",
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "hps",
+      "repo": "xswu/HPSv2",
+      "revision": "697403c78157020a1ae59d23f111aa58ced35b0a",
+      "filename": "README.md",
+      "bytes": 28,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "imagereward",
+      "repo": "zai-org/ImageReward",
+      "revision": "5736be03b2652728fb87788c9797b0570450ab72",
+      "filename": "ImageReward.pt",
+      "bytes": 1786880927,
+      "sha256": "d71dc8d4912bc633c06ab8ef1ef6a81e8199d4369f14b47b29baf1d19de561f6",
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "imagereward",
+      "repo": "zai-org/ImageReward",
+      "revision": "5736be03b2652728fb87788c9797b0570450ab72",
+      "filename": "README.md",
+      "bytes": 3158,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "imagereward",
+      "repo": "zai-org/ImageReward",
+      "revision": "5736be03b2652728fb87788c9797b0570450ab72",
+      "filename": "med_config.json",
+      "bytes": 485,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "README.md",
+      "bytes": 3227,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "config.json",
+      "bytes": 4514,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "merges.txt",
+      "bytes": 524619,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "model.safetensors",
+      "bytes": 3944552236,
+      "sha256": "ef31ef6fc5ff4d9bb90dd232df4e145887ba62c5a03aa2841415f8c25f18d52e",
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "preprocessor_config.json",
+      "bytes": 556,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "special_tokens_map.json",
+      "bytes": 472,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "tokenizer.json",
+      "bytes": 2224119,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "tokenizer_config.json",
+      "bytes": 775,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "pickscore",
+      "repo": "yuvalkirstain/PickScore_v1",
+      "revision": "a4e4367c6dfa7288a00c550414478f865b875800",
+      "filename": "vocab.json",
+      "bytes": 862328,
+      "sha256": null,
+      "license": null
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "README.md",
+      "bytes": 9380,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "added_tokens.json",
+      "bytes": 605,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "chat_template.json",
+      "bytes": 1049,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "config.json",
+      "bytes": 1495,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "generation_config.json",
+      "bytes": 248,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "merges.txt",
+      "bytes": 1671853,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "model-00001-of-00004.safetensors",
+      "bytes": 4976698776,
+      "sha256": "4006af5041dbb5c0372fe4ef4f7125c23c752ebe51a4b1f6801a5e8f1cca2c9b",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "model-00002-of-00004.safetensors",
+      "bytes": 4932751032,
+      "sha256": "60615fd0411ed1e9bd9ba0265a93758a1289cb0f7cf5e5e6e6bca9e670b41730",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "model-00003-of-00004.safetensors",
+      "bytes": 4991495808,
+      "sha256": "ea98cced32e8cf6f9b30168e5e1d32be7963fef7b355edeace34fd3533610274",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "model-00004-of-00004.safetensors",
+      "bytes": 1683468512,
+      "sha256": "4b8e69fa56564912a35c757fa058af20a9c3ab602bd90f1d8286c338f34420bf",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "model.safetensors.index.json",
+      "bytes": 57619,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "preprocessor_config.json",
+      "bytes": 575,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "special_tokens_map.json",
+      "bytes": 613,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "tokenizer_config.json",
+      "bytes": 7327,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "value_head.safetensors",
+      "bytes": 7370,
+      "sha256": "985abf225832def7b549bf01da0c2d63ae91bf27157d5f8da93b6d9deebde2e6",
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "vlm",
+      "repo": "Skywork/Skywork-VL-Reward-7B",
+      "revision": "cfc6496e451f4e636d7e78ce6249a4ee0efb89a1",
+      "filename": "vocab.json",
+      "bytes": 2776833,
+      "sha256": null,
+      "license": "mit"
+    },
+    {
+      "kind": "hf",
+      "component": "bert",
+      "repo": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "filename": "README.md",
+      "bytes": 10517,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "bert",
+      "repo": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "filename": "config.json",
+      "bytes": 570,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "bert",
+      "repo": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "filename": "tokenizer.json",
+      "bytes": 466062,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "bert",
+      "repo": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "filename": "tokenizer_config.json",
+      "bytes": 48,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "hf",
+      "component": "bert",
+      "repo": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "filename": "vocab.txt",
+      "bytes": 231508,
+      "sha256": null,
+      "license": "apache-2.0"
+    },
+    {
+      "kind": "url",
+      "component": "style",
+      "filename": "ViT-B-16.pt",
+      "url": "https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt",
+      "sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+      "license": "mit"
+    },
+    {
+      "kind": "url",
+      "component": "geneval",
+      "filename": "ViT-L-14.pt",
+      "url": "https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt",
+      "sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+      "license": "mit"
+    },
+    {
+      "kind": "url",
+      "component": "metrics",
+      "filename": "vgg16-397923af.pth",
+      "url": "https://download.pytorch.org/models/vgg16-397923af.pth",
+      "sha256_prefix": "397923af",
+      "license": "torchvision weights upstream terms"
+    },
+    {
+      "kind": "url",
+      "component": "metrics",
+      "filename": "weights-inception-2015-12-05-6726825d.pth",
+      "url": "https://github.com/toshas/torch-fidelity/releases/download/v0.2.0/weights-inception-2015-12-05-6726825d.pth",
+      "sha256_prefix": "6726825d",
+      "license": "torch-fidelity upstream terms"
+    },
+    {
+      "kind": "url",
+      "component": "geneval",
+      "filename": "mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco.pth",
+      "url": "https://download.openmmlab.com/mmdetection/v2.0/mask2former/mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco/mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco_20220504_001756-743b7d99.pth",
+      "sha256_prefix": "743b7d99",
+      "license": "Apache-2.0; COCO-trained checkpoint upstream terms"
+    },
+    {
+      "kind": "url",
+      "component": "geneval",
+      "filename": "mask2former_r50_lsj_8x2_50e_coco.pth",
+      "url": "https://download.openmmlab.com/mmdetection/v2.0/mask2former/mask2former_r50_lsj_8x2_50e_coco/mask2former_r50_lsj_8x2_50e_coco_20220506_191028-8e96e88b.pth",
+      "sha256_prefix": "8e96e88b",
+      "license": "Apache-2.0; COCO-trained checkpoint upstream terms"
+    },
+    {
+      "kind": "url",
+      "component": "metrics",
+      "filename": "torch_fidelity-0.3.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/9f/2c/e24c7e261eaa00fc911c39a5e30f77efbace480aae2548db9ceaef410945/torch_fidelity-0.3.0-py3-none-any.whl",
+      "sha256": "d01284825595feb7dc3eae3dc9a0d8ced02be764813a3483f109bc142b52a1d3",
+      "bytes": 37012,
+      "license": "Apache License 2.0"
+    },
+    {
+      "kind": "url",
+      "component": "paper",
+      "filename": "2604.27147v3.pdf",
+      "url": "https://arxiv.org/pdf/2604.27147v3",
+      "bytes": 37791034,
+      "sha256": "640ff820d4b7dea270ebf8687ff29dbc476d9c08d63af0294f6b564eb8de2281",
+      "license": "CC-BY-4.0",
+      "attribution": "Huang, Lin, Shah, Nair and Boffi, How to Guide Your Flow, arXiv:2604.27147v3, 2026"
+    },
+    {
+      "kind": "local",
+      "component": "metrics",
+      "filename": "lpips-v0.1-vgg.pth",
+      "path": "/opt/fmrg/venv/lib/python3.11/site-packages/lpips/weights/v0.1/vgg.pth",
+      "license": "LPIPS upstream license"
+    },
+    {
+      "kind": "input",
+      "component": "sources",
+      "filename": "evaluator-source.tar.gz",
+      "bytes": 23022501,
+      "sha256": "dd7a0640f881c23f3d2c8f5f7efe1c4275b38d2a7b17b05bed9bda254cb37d80"
+    }
+  ],
+  "redistribution": "Public mirror at explicit user request; original per-component terms and model cards apply",
+  "unresolved": [
+    "author inverse image IDs/splits",
+    "style image/prompt IDs",
+    "paper R50 vs released GenEval Swin-S",
+    "GenEval native ABI runtime",
+    "VLM differentiable preprocessing and missing source runner",
+    "full allocation/deadline"
+  ]
+}

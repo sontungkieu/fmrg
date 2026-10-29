@@ -1,0 +1,73 @@
+{
+  "status": "AUTHOR_EXACT_SPLITS_UNAVAILABLE",
+  "full_launch_allowed": false,
+  "datasets": {
+    "AFHQ-Dog": {
+      "tuning_count": 50,
+      "evaluation_count": 1000,
+      "image_ids": null,
+      "source_revision": null,
+      "raw_sha256": null,
+      "decoded_sha256": null,
+      "preprocessed_sha256": null,
+      "tuning_evaluation_overlap_must_equal": 0
+    },
+    "FFHQ": {
+      "tuning_count": 50,
+      "evaluation_count": 1000,
+      "image_ids": null,
+      "source_revision": null,
+      "raw_sha256": null,
+      "decoded_sha256": null,
+      "preprocessed_sha256": null,
+      "tuning_evaluation_overlap_must_equal": 0
+    }
+  },
+  "source_preprocessing": {
+    "script": "scripts/solve_inverse_problem.py:294-298",
+    "rgb": true,
+    "resolution": [
+      256,
+      256
+    ],
+    "interpolation": "BICUBIC",
+    "aspect_policy": "resize directly to square; no center crop",
+    "to_tensor": "uint8 / 255",
+    "model_input": "2 * tensor - 1"
+  },
+  "measurement": {
+    "range": "[-1,1]",
+    "noise_sigma": 0.03,
+    "operators": [
+      "4x average pooling",
+      "61x61 motion blur intensity .5",
+      "centered 64x64 mask"
+    ],
+    "exact_motion_kernel_sha256": null,
+    "measurement_rng": "Released source uses global RNG after model init; freeze per-image noise seeds and tensor SHA in new manifest before tuning."
+  },
+  "required_row_fields": [
+    "dataset",
+    "split",
+    "original_id",
+    "source_repo",
+    "source_revision",
+    "source_file",
+    "raw_sha256",
+    "decode_mode",
+    "preprocessed_sha256",
+    "operator_config_sha256",
+    "operator_kernel_sha256",
+    "noise_seed",
+    "measurement_sha256"
+  ],
+  "fallback_policy": "No dataset/mirror/1050-image selection is silently substituted. A deterministic reconstructed split requires a separately versioned manifest and claim label; it does not become author-exact.",
+  "style": {
+    "reference_count": 16,
+    "prompts_per_reference": 3,
+    "total_prompt_pairs": 48,
+    "reference_ids": null,
+    "paired_prompts": null,
+    "sha256": null
+  }
+}

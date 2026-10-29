@@ -1,5 +1,12 @@
 # Conditions before full paper reproduction
 
+The pinned-paper audit is now complete in
+[PAPER_SOURCE_AUDIT.md](full_paper/PAPER_SOURCE_AUDIT.md), with settings and
+unresolved artifacts in [CONTRACT.json](full_paper/CONTRACT.json). The older
+checklist below is retained for context. Paper access is resolved through the
+new HF mirror; exact author splits and several execution contracts remain
+unresolved. Full execution is still unauthorized.
+
 The Modal pilot is not reproduction of the paper's full image benchmark. It
 uses three inverse-problem images and two reward prompts. Freeze the following
 contracts before launching a large benchmark, and retain the resolved versions

@@ -1,5 +1,9 @@
 # Handoff: setup FMRG từ Hugging Face public
 
+Update 2026-10-29: read [the full-paper preparation handoff](full_paper/FULL_PAPER_HANDOFF.md)
+for the audited contract, additional evaluator assets and canary commands. The
+core instructions below are the earlier setup snapshot. Full launch stays disabled.
+
 Cập nhật 28/10/2026. Đích: [codemaivanngu/fmrg-b200-portable](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable). Runtime, assets, source/helper và raw pilot outputs đã publish **public**; không cần HF token cho các URL này. Artifact commit: `73353f15eab0024925c942d197a7ed39a71aca0d`. Link dưới đây pin theo commit, không phụ thuộc `main`.
 
 ## Tải và setup

@@ -1,0 +1,35 @@
+{
+  "status": "CLOSED_USER_REPORTED_NOT_INDEPENDENTLY_RAW_AUDITED",
+  "verdict": "Hoàn tất replay screening; không bitwise; chưa xác nhận tương đương phân phối.",
+  "evidence_origin": "User pasted company-agent report; no company node accessed in this audit.",
+  "counts": {
+    "G_configs": 288,
+    "G_oracles": 8,
+    "I": 72,
+    "J_per_attempt": 96,
+    "J_attempts": 2,
+    "R": 24
+  },
+  "measurement_sha_matches": 6,
+  "deltas": {
+    "G_max_abs": 0,
+    "I_mean_abs_dPSNR": 0.048,
+    "I_max_abs_dPSNR": 1.84,
+    "J_mean_abs_dPSNR": 0.07,
+    "J_max_abs_dPSNR": 0.93,
+    "R_max_abs_weighted_CLIP_loss": 0.068,
+    "PNG_max_channel_I": 219,
+    "PNG_max_channel_J": 245,
+    "PNG_max_channel_R": 255,
+    "J_cross_gpu_max_channel": 161
+  },
+  "caveats": [
+    "Mean deltas on this screening do not establish equivalence of distributions.",
+    "GPU/kernel nondeterminism is a plausible explanation, not a mechanism isolated by this report.",
+    "R uses CLIP weight .01: .068 weighted-loss difference corresponds to 6.8 raw similarity-logit units.",
+    "Repeated settings/seeds are not independent image samples.",
+    "Replay J run-manifest absent; any retrospective receipt must say reconstructed and keep raw file identities."
+  ],
+  "remote_receipt_written_by_this_task": false,
+  "full_launch_allowed": false
+}
