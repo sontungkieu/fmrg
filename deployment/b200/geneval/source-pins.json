@@ -1,0 +1,5 @@
+{
+  "geneval_commit": "af4902f24d3ca90ebbb446dd9891a59e0f82725f",
+  "mmdetection_commit": "e9cae2d0787cd5c2fc6165a6061f92fa09e48fb1",
+  "evaluate_images_sha256": "3a21c7a7caedcf97aa9cdfcbc1c0b800c585f7adf4e34a99561025e209addc54"
+}

@@ -29,6 +29,9 @@ order-of-magnitude speedup in comparison to prior state of the art.
 
 For the portable B200 runtime and company workflow, see
 [deployment/b200](deployment/b200/README.md). The
+[2026-11-01 evaluator preparation update](deployment/b200/geneval/PREPARATION_HANDOFF.md)
+provides the isolated GenEval overlay, technical B200 evidence and reconstructed
+data. The
 [2026-10-29 full-paper audit and handoff](deployment/b200/full_paper/FULL_PAPER_HANDOFF.md)
 provides immutable HF evaluator assets and explicit paper/source contracts.
 Full benchmark execution remains disabled pending the recorded blockers and

@@ -1,5 +1,10 @@
 # Portable B200 setup and company replay
 
+The [2026-11-01 GenEval/VLM/reconstructed-data update](geneval/PREPARATION_HANDOFF.md)
+adds a separate evaluator overlay with Modal B200 technical qualification,
+authorized Skywork weights and explicitly reconstructed image splits. It keeps
+full execution disabled; the company node still needs its own evaluator canary.
+
 The 2026-10-29 preparation is in
 [full_paper/FULL_PAPER_HANDOFF.md](full_paper/FULL_PAPER_HANDOFF.md): audited
 paper/source differences, immutable HF evaluator downloads, offline setup and

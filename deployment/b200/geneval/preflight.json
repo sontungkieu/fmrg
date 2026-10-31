@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "repaired_terminaltables": true,
+  "overlay": {
+    "bytes": 162103715,
+    "sha256": "16126b76c1540e464cdef993f0e7551432f7203d8de000f470244edeabd0b7f1"
+  },
+  "full_launch_allowed": false
+}

@@ -1,0 +1,348 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-31T18:48:01.416904+00:00",
+  "authentication": "none",
+  "publication_sha_verified": true,
+  "toolkit_sha_verified": true,
+  "handoff_sha_verified": true,
+  "source_matches_qualified_toolkit": true,
+  "large_file_evidence": "Anonymous HEAD + public HF LFS SHA/size metadata + remote uploader full SHA; no large laptop downloads",
+  "checks": [
+    {
+      "path": "full-paper/20261101/runtime/geneval-overlay-v2.tar.gz",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/runtime/mmcv_full-1.7.1-cp311-cp311-linux_x86_64.whl",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/runtime/build.json",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/runtime/preflight.json",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/runtime/canary.json",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/runtime/canary-a2-failed.json",
+      "group": "runtime",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/CONTRACT_UPDATE.json",
+      "group": "toolkit",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/geneval-toolkit-20261101.tar.gz",
+      "group": "toolkit",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/canary.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/offline_adapter.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/source-pins.json",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/restore_overlay.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/download_publication.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/strict_evidence.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/tuning-plan-draft.json",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/reconstructed-plan.json",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/toolkit/test_preparation.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/build_overlay.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/README.md",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/added_tokens.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/chat_template.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/config.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/generation_config.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/merges.txt",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/model-00001-of-00004.safetensors",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/model-00002-of-00004.safetensors",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/model-00003-of-00004.safetensors",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/model-00004-of-00004.safetensors",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/model.safetensors.index.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/preprocessor_config.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/special_tokens_map.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/tokenizer.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/tokenizer_config.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/value_head.safetensors",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/vlm/vocab.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/vlm/manifest.json",
+      "group": "vlm",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/reconstructed-splits-256.tar.gz",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/manifest.json",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/validation.json",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/selection-plan.json",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/AFHQ-LICENSE.txt",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/reconstructed/FFHQ-LICENSE.txt",
+      "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    }
+  ]
+}

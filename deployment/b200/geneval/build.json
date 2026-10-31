@@ -1,0 +1,41 @@
+{
+  "status": "BUILT_CPU_IMPORTS_PASS_NOT_GPU_QUALIFIED",
+  "full_launch_allowed": false,
+  "core_runtime_sha256": "06ef365e64d7dcccd7507ac3435f46bf25b724679b65c8e1a8d7a060958f43ff",
+  "overlay_prefix": "/opt/fmrg-geneval",
+  "torch": "2.7.1+cu128",
+  "python": "3.11",
+  "native_arch": "sm_100",
+  "compiler_cuda": "12.8.1",
+  "mmcv_source_commit": "7a13f995784087ace7cf17ae5f965b6190fe0aea",
+  "patch": {
+    "source_commit": "7a13f995784087ace7cf17ae5f965b6190fe0aea",
+    "source_archive_sha256": "1e2b3cbb4a9d31ffe6039fd5dc3b13edef1f7795f38fd12b8ee72c50e2639adb",
+    "changes": [
+      {
+        "file": "setup.py",
+        "before_sha256": "5083297269b2a33c2f6a2b952bf7a23337d8a2c0beea702928571e3542039db7",
+        "after_sha256": "95e11741e5e357f4a39bab6720566e67083ad08f0b108efda15c34cacd1fd96e",
+        "change": "C++14 -> C++17 required by pinned PyTorch2.7 headers; no numerical kernel edits"
+      }
+    ]
+  },
+  "overlay": {
+    "bytes": 162103715,
+    "sha256": "16126b76c1540e464cdef993f0e7551432f7203d8de000f470244edeabd0b7f1"
+  },
+  "wheel": {
+    "bytes": 3942182,
+    "sha256": "e97d6ba16b014143512dfb9a2a9e33f5b71002c69514411c514e166ab18dbd94"
+  },
+  "seconds": 646.23477604,
+  "overlay_dependency_repair": [
+    "terminaltables==3.1.10",
+    "scikit-learn==1.2.2",
+    "joblib==1.2.0",
+    "threadpoolctl==3.1.0"
+  ],
+  "cpu_full_import_preflight": "PASS",
+  "builder_base": "nvidia/cuda@sha256:6617a625f4090c76c545a0e7d63f2e441718ef9af7f4efe7dd1242a29e289fd7",
+  "qualification": "Modal B200 technical only; not company qualification or author-evaluator numerical equivalence"
+}

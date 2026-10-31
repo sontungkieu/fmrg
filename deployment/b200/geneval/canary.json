@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "kind": "GENEVAL_NATIVE_AND_FIXTURE_CANARY",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA B200",
+  "capability": [
+    10,
+    0
+  ],
+  "full_launch_allowed": false,
+  "scientific_result": false,
+  "code_sha256": {
+    "canary.py": "c94dc3a54ca6173d79510da4ba994f12898660493f6cfdccdcec6cd96000a282",
+    "offline_adapter.py": "39dbc7560c857e7f57c343f643dbe72348fcc10f053779bb88a87d3fc5531bcd",
+    "source-pins.json": "5199863ded45c4b010216b1d12a9b9e2b000f72583b214bf73f3c303511f617e"
+  },
+  "native": {
+    "status": "PASS",
+    "msda_forward_max_abs": 2.220446049250313e-16,
+    "msda_gradient_max_abs": [
+      4.440892098500626e-16,
+      3.552713678800501e-15,
+      1.7763568394002505e-15
+    ],
+    "nms_keep": [
+      0,
+      2
+    ]
+  },
+  "profiles": [
+    {
+      "profile": "r50",
+      "checkpoint_sha256": "8e96e88b40be84c1432696ae3183ea0746e749ddc996efb40e55bfad8361cbea",
+      "clip_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+      "quickgelu_modules": 36,
+      "evaluator_sha256": "3a21c7a7caedcf97aa9cdfcbc1c0b800c585f7adf4e34a99561025e209addc54",
+      "state_keys": {
+        "model_keys": 610,
+        "checkpoint_keys": 610,
+        "missing": [],
+        "unexpected": [],
+        "bad_shapes": []
+      },
+      "resolved_config_sha256": "920698f24317333599ee50db84e7d3e7fe156c036fd034b742372c2f56dbea48",
+      "network": "TCP_DENIED",
+      "claim": "TECHNICAL_ONLY_NOT_PAPER_SCORE",
+      "full_launch_allowed": false,
+      "status": "PASS",
+      "detected_classes": [
+        "bench",
+        "car",
+        "chair",
+        "truck"
+      ],
+      "synthetic_color_label": "red",
+      "fixture_correct": true,
+      "fixture_score_interpretation": "NO_EFFICACY_CLAIM"
+    },
+    {
+      "profile": "swin_s",
+      "checkpoint_sha256": "743b7d99015f1224c6d57fd4b14d04b15cc8ec72ae7ee7831e7c71d8873b7a54",
+      "clip_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+      "quickgelu_modules": 36,
+      "evaluator_sha256": "3a21c7a7caedcf97aa9cdfcbc1c0b800c585f7adf4e34a99561025e209addc54",
+      "state_keys": {
+        "model_keys": 649,
+        "checkpoint_keys": 649,
+        "missing": [],
+        "unexpected": [],
+        "bad_shapes": []
+      },
+      "resolved_config_sha256": "c5341aa96d3ab9e5c4caeb267d3844606241199e9e4bf3f2c08b8308a5e0d729",
+      "network": "TCP_DENIED",
+      "claim": "TECHNICAL_ONLY_NOT_PAPER_SCORE",
+      "full_launch_allowed": false,
+      "status": "PASS",
+      "detected_classes": [
+        "bench",
+        "car",
+        "chair",
+        "truck"
+      ],
+      "synthetic_color_label": "red",
+      "fixture_correct": true,
+      "fixture_score_interpretation": "NO_EFFICACY_CLAIM"
+    }
+  ],
+  "fixture_sha256": "8e9ab135da7eacabdeeeee11ba4b7bcdd1bfac128cf92a9de9c79f984060ae1e",
+  "seconds": 45.93901404,
+  "peak_allocated_gib": 3.630399227142334
+}
