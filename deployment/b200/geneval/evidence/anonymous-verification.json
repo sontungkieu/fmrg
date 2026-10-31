@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "checked_at_utc": "2026-10-31T18:48:01.416904+00:00",
+  "checked_at_utc": "2026-10-31T19:19:06.139532+00:00",
   "authentication": "none",
   "publication_sha_verified": true,
   "toolkit_sha_verified": true,
@@ -137,6 +137,14 @@
       "small_GET_hash_verified": false
     },
     {
+      "path": "full-paper/20261101/toolkit/measurement-source-pins.json",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
       "path": "full-paper/20261101/toolkit/test_preparation.py",
       "group": "source",
       "anonymous_HEAD": 200,
@@ -146,6 +154,14 @@
     },
     {
       "path": "full-paper/20261101/toolkit/build_overlay.py",
+      "group": "source",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/toolkit/freeze_measurements.py",
       "group": "source",
       "anonymous_HEAD": 200,
       "size_metadata_verified": true,
@@ -339,6 +355,30 @@
     {
       "path": "full-paper/20261101/reconstructed/FFHQ-LICENSE.txt",
       "group": "reconstructed",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": false,
+      "small_GET_hash_verified": true
+    },
+    {
+      "path": "full-paper/20261101/measurements/reconstructed-measurements.tar.gz",
+      "group": "measurements",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/measurements/measurement-manifest.json",
+      "group": "measurements",
+      "anonymous_HEAD": 200,
+      "size_metadata_verified": true,
+      "lfs_sha_verified": true,
+      "small_GET_hash_verified": false
+    },
+    {
+      "path": "full-paper/20261101/measurements/measurement-validation.json",
+      "group": "measurements",
       "anonymous_HEAD": 200,
       "size_metadata_verified": true,
       "lfs_sha_verified": false,

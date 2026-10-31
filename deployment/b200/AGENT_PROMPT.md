@@ -1,56 +1,58 @@
-Bạn là agent trên node công ty, tiếp tục giai đoạn chuẩn bị full-paper FMRG.
-Screening đã chốt; nhiệm vụ mới là đọc audit/contract, setup assets và canary
-evaluators còn thiếu. CHƯA LAUNCH FULL, không rerun shortlist theo mặc định.
+Bạn là agent trên node công ty, tiếp tục chuẩn bị FMRG full-paper.
+CHƯA LAUNCH FULL, không rerun shortlist hoặc gọi Modal. Không can thiệp canary
+ensemble/job đang chạy; thu receipt hiện hành và chỉ chạy bước kế tiếp khi GPU
+allocation/queue hiện có cho phép. Không tự mở allocation mới.
 
-Nguồn chuẩn:
-- Handoff HF immutable: https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/4973c68ccc4e088f5634e53c0dd63e38f0d17e65/full-paper/20261029/FULL_PAPER_HANDOFF.md
-- SHA256 handoff: 6d989c53b299ff9768ca93f5093ee72e222e556eeb84e4f362bbd66fdbbe02b5
-- Contract: https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/77f4ae1dee744fbfa906eaf3f9cd00b66a344594/full-paper/20261029/toolkit/CONTRACT.json
-- SHA256 contract: 1b02425b2c9d6c447bc7350f2d168c35af6b2e06bf6f904d43ca745eb098b3cb
-- GitHub provenance: https://github.com/sontungkieu/fmrg ; deployment/b200/full_paper/.
+Nguồn chuẩn (handoff mới thay thế các đoạn GenEval/VLM/splits của bản29/10):
+- Handoff HF immutable: https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/3bd3a35d8226b8353a1a6c23d13303618cdce683/full-paper/20261101/PREPARATION_HANDOFF.md
+- SHA256 handoff: ad3c06b2de3249e47a961dffc4041a6bf2a190912164d9811386401cb8ddc743
+- Publication manifest: https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/a3bc850ce0a5e90ca1f41adf6275cfa5705cb2f3/full-paper/20261101/publication.json
+- SHA256 publication: 54f9b8639586f3cb5299f09b9f84c5fe6e8bbe85e83ffdae7d16f6206fe9ac34
+- GitHub: https://github.com/sontungkieu/fmrg ; deployment/b200/geneval/.
 - Scientific source frozen: be485ba40f1d1c163b95ad61112aca6baa13ed22.
 
-1. Đọc AGENTS/runbook đang có và handoff mới qua proxy HF được phép, verify SHA.
-   Lấy allocation/queue/deadline/GPU UUID/storage/proxy từ receipts hiện hành.
-   Dùng manager đang vận hành, giữ CUDA_VISIBLE_DEVICES, không sửa job khác hoặc
-   mở allocation mới. Project layout fmrg_all đã duyệt; không đoán host/path.
-   Không log secrets/proxy có auth, không bật set -x.
+1. Đọc AGENTS/runbook và handoff qua proxy HF được phép, verify SHA. Resolve
+   layout fmrg_all, storage, proxy, allocation/job/deadline/GPU UUID từ evidence
+   hiện hành. Giữ CUDA_VISIBLE_DEVICES và manager/queue đang vận hành. Không log
+   credentials/proxy có auth, không bật set -x. Giữ attempts/logs cũ.
 
-2. Giữ runtime /opt/fmrg và source frozen. Tái dùng core FLUX/LoRAs/CLIP-H cùng
-   receipt canary đã đạt; kiểm identity thay vì restore đè. Source/config/helper
-   mới là toolkit riêng. Đọc các lệnh CPU setup trong handoff; tải toolkit và
-   ~10.15GB assets mới trực tiếp shared storage qua HF proxy, verify fullSHA.
-   Không tải qua laptop, GitHub Raw/PyPI hoặc pip/conda/rebuild trên node.
+2. Tái dùng core /opt/fmrg cùng receipt/hash đã đạt. Theo đúng lệnh trong handoff,
+   tải toolkit và nhóm runtime/reconstructed trực tiếp shared storage qua HF
+   proxy, verify full SHA. Nhóm vlm thêm16.6GB; nhóm measurements là gói riêng,
+   chưa cần cho GenEval canary. Không pip/conda/compile/GitHub download trên node.
+   Skywork access đã giải quyết và weights public; paper reward adapter chưa đạt.
 
-3. Dùng helper download_assets.py đúng CLI trong handoff. HPSv2.1, ImageReward,
-   PickScore, BERTtokenizer, metric/style/GenEval weights và pinned source đã
-   public. VLM chưa có weights:16file gated, README thôi; không bypass gate hoặc
-   tự chấp nhận điều khoản. Exact AFHQ/FFHQ splits và style pairs chưa có,
-   không dựng split tùy ý rồi gọi author-exact.
+3. Restore GenEval overlay162MB vào /opt/fmrg-geneval theo helper, giữ core venv.
+   Nếu prefix tồn tại thì verify/reuse, không restore đè, không sudo tự động.
+   Dùng weights/source extras29/10 đã verify; basename detector thực tế không có
+   timestamp như lệnh sai trong handoff cũ. Giữ OpenAI CLIP loader/QuickGELU.
 
-4. CPU metric canary dùng existing /opt/fmrg/python-fmrg.sh; pure-Python metric
-   overlay nằm ngoài frozen venv. Chạy four-model reward input-gradient canary
-   chỉ trong allocation đúng1B200 đã được cấp, timeout hữu hạn, output mới.
-   Thu JSON/log/exitcode/VRAM/GPU/job identity. Không sinh ảnh FLUX. FAIL thì giữ
-   traceback đầu và receipt, không retry mù hoặc chuyển technical gate thành PASS.
+4. Trong allocation một B200 đang được cấp, chạy canary.py đúng lệnh/timeout180s
+   và output mới của handoff. TCP bị chặn trong canary. Thu JSON/log/exitcode,
+   allocation/job/GPU UUID/driver, full identities, elapsed/VRAM. Modal native
+   MSDA/NMS + R50/Swin-S/color technical PASS là reference; company phải có
+   receipt riêng. Import-only, timeout hoặc thiếu JSON không được ghi PASS.
+   R50 là paper primary, Swin-S là official-default control, giữ score tách biệt.
+   Không sinh ảnh FLUX, không chạy553prompts×4seeds hoặc full inverse matrix.
 
-5. GenEval đã stage cả R50 lẫn Swin-S/CLIP-L14/source. Prepare source và kiểm
-   native env có sẵn nếu được cấp. Generation runtime chưa có mmcv/mmdet ABI;
-   không tự cài. Paper dùng R50, official evaluator default Swin-S; phải ghi
-   rõ config+checkpoint choice, chưa có native kernel/detector canary thì ghi
-   BLOCKED. Không để evaluator tự tải từ internet.
+5. Split AFHQ-Dog/FFHQ là reconstructed được user duyệt riêng: mỗi dataset
+   50tuning+1000eval, tổng2100ảnh, có hashes/preprocessing/FFHQ attribution.
+   Giữ nhãn reconstructed, không gọi author-exact hoặc chọn lại split theo metric.
+   Nếu stage observations thì kiểm manifest/operator-state/tensor hashes; chưa
+   có qualified runner adapter nạp frozen y. Released CLI hiện tự tạo observations;
+   không gọi generator mặc định rồi tuyên bố đã sử dụng frozen inputs.
 
-6. Đọc PAPER_SOURCE_AUDIT.md và CONTRACT.json. Hai track released_code_v1 và
-   paper_formula_v1 khác loss/Eweight/early-stop/Adam-J; paper adapter chưa được
-   triển khai/qualify. Giữ actual time grid và measured compute counters, không
-   dùng NFEtag. Paper TableE.2/E.17 đã audit; exactsplits/tuning/seeds/style/VLM
-   adapter/baseline env/allocation vẫn cần artifact/decision. Không sửa sampler
-   frozen hoặc đổi metric preprocessing để làm đẹp kết quả.
+6. Đọc parent PAPER_SOURCE_AUDIT/CONTRACT và CONTRACT_UPDATE mới. Hai track
+   released_code_v1 và paper_formula_v1 khác loss/Eweight/early-stop/Adam-J;
+   paper adapter chưa qualify. Skywork cần differentiable Yes/No-logit reward,
+   không scalar valuehead; renoiseconstantc vẫn chưa chốt. Style16refs+48paired
+   prompts, tuning objective/tie-break/baselines, compute instrumentation và
+   full allocation/deadline vẫn là blockers. Draft tuning không phải author budget.
+   Không đổi sampler frozen/preprocessing để cải thiện số đo.
 
-7. Trả report/receipt bỏ secrets với HF revisions/hash, contract track/hash,
-   runtime/source, allocation/job/GPU, component hashes, canary JSON/log/exitcode,
-   evaluator env status, expected/actual outputs nếu có và blockers. Screening
-   verdict: completed replay, non-bitwise, distribution equivalence unconfirmed;
-   raw report hiện là user-reported. Không viết receipt reconstructed như log
-   contemporaneous. Chỉ lập kế hoạch/cost cho full; full_launch_allowed=false
-   cho đến manifest mới được review và chỉ thị launch riêng. Không gọi Modal.
+7. Trả report bỏ secrets: nhóm tải/hash/revisions, core/overlay/source/contract,
+   allocation/job/GPU UUID, JSON/log/exitcode/time/VRAM từng canary, ensemble receipt
+   nếu đã có, và từng blocker kèm evidence path/bước xử lý. Missing/failed giữ rõ,
+   không zero-fill. Screening replay non-bitwise là báo cáo trước; chưa có raw
+   receipt mới thì không nâng thành kết luận thống kê/efficacy. full_launch_allowed
+   luôn false; full execution chỉ sau manifest được review và chỉ thị launch riêng.

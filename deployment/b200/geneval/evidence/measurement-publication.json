@@ -1,0 +1,25 @@
+{
+  "repo": "codemaivanngu/fmrg-b200-portable",
+  "commit": "e9fbd7511b0db98e0daebf7462779022f792ea2b",
+  "files": [
+    {
+      "path": "full-paper/20261101/measurements/reconstructed-measurements.tar.gz",
+      "bytes": 3117966186,
+      "sha256": "6f6c9f6514767e0513664149a129fd6c7a2046c69d18fc623e400913704adc33",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/e9fbd7511b0db98e0daebf7462779022f792ea2b/full-paper/20261101/measurements/reconstructed-measurements.tar.gz"
+    },
+    {
+      "path": "full-paper/20261101/measurements/measurement-manifest.json",
+      "bytes": 20876349,
+      "sha256": "f0a6b32ea1fd1ba6a1f0ff0e7055680ee32ae39f40f4e9bf44046fd29effac7a",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/e9fbd7511b0db98e0daebf7462779022f792ea2b/full-paper/20261101/measurements/measurement-manifest.json"
+    },
+    {
+      "path": "full-paper/20261101/measurements/measurement-validation.json",
+      "bytes": 493,
+      "sha256": "ca1d779eb2640081d1a1af1579185865a22fb548953c6398358f6247ae477b37",
+      "url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/e9fbd7511b0db98e0daebf7462779022f792ea2b/full-paper/20261101/measurements/measurement-validation.json"
+    }
+  ],
+  "full_launch_allowed": false
+}

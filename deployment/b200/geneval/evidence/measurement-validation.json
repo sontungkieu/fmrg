@@ -1,0 +1,20 @@
+{
+  "status": "STRUCTURAL_PASS",
+  "claim": "reconstructed",
+  "author_provenance_independently_verified": false,
+  "measurement_hashes_verified": true,
+  "full_launch_allowed": false,
+  "counts": {
+    "AFHQ-Dog/evaluation": 1000,
+    "AFHQ-Dog/tuning": 50,
+    "FFHQ/evaluation": 1000,
+    "FFHQ/tuning": 50
+  },
+  "measurements": 6300,
+  "seconds": 721.984542506,
+  "probe": {
+    "sr4": 0.003929518999999715,
+    "motion61": 0.035915253000000646,
+    "mask64": 0.00014572100000087573
+  }
+}

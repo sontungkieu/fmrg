@@ -8,15 +8,15 @@
 - PyTorch2.7.1+cu128/Python3.11.14 kế thừa core; MMCV-full1.7.1 build native sm_100 với CUDA12.8.1, MMDetection2.28.2, open_clip2.20/timm.9.2 trong evaluator overlay. Source MMCV chỉ đổi compiler C++14→C++17, không đổi numerical kernels. Đây là adapted ABI environment, không phải bản môi trường Torch1.12/cu113 gốc.
 - **Modal B200 technical PASS:** native deformable attention forward/backward đối chiếu CPUreference, CUDA NMS, cả detector R50/Swin-S và official GenEval color-classifier offline. Strict checkpoint key/shape audit: R50 610/610, Swin-S649/649; không thiếu/thừa/sai shape. Giữ OpenAI loader và36QuickGELU modules; chỉ thay cache path. TCP bị chặn trong canary. Đây không phải dataset score hoặc chứng nhận company node.
 - **Skywork** đã cấp quyền và mirror17files nguồn + manifest, khoảng16.6GB, revision `cfc6496e451f4e636d7e78ce6249a4ee0efb89a1`. Blocker access đóng; paper Yes/No-logit adapter vẫn chưa qualify, không tráo bằng scalar valuehead.
-- **Reconstructed split** đã được user cho phép: AFHQ-Dog original V1 mirror và FFHQ aligned1024→256, mỗi dataset50tuning+1000eval, tổng2100PNG. Sort SHA256(namespace/dataset/ID), first50 tuning,next1000 eval; không adaptive replacement. Freeze source revisions, original IDs, raw/decoded/preprocessed/PNG hashes và preprocessing. Đã verify FFHQ từng raw image theo MD5 metadata gốc NVIDIA và giữ attribution/license. Không phải author-exact; measurement tensors chưa sinh.
+- **Reconstructed split** đã được user cho phép: AFHQ-Dog original V1 mirror và FFHQ aligned1024→256, mỗi dataset50tuning+1000eval, tổng2100PNG. Sort SHA256(namespace/dataset/ID), first50 tuning,next1000 eval; không adaptive replacement. Freeze source revisions, original IDs, raw/decoded/preprocessed/PNG hashes và preprocessing. Đã verify FFHQ từng raw image theo MD5 metadata gốc NVIDIA và giữ attribution/license. Không phải author-exact. Đã freeze thêm6300CPU observation tensors theo source operators và per-image/task seeds; không có neural generation.
 
 ## Bootstrap qua HF/proxy
 
 Operator/agent lấy path, proxy, allocation/GPU UUID/deadline từ runbook/receipt đang hiệu lực. Dùng layout `fmrg_all` đã duyệt; output/toolkit mới, không overwrite attempts hoặc sửa jobs đang chạy. Không tải/cài qua GitHub/PyPI trên node; không gọi Modal. Không log secrets hoặc proxy có auth.
 
-- [Publication manifest](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/08b0ac3905affcb2a1439c05629d451a956885eb/full-paper/20261101/publication.json) — SHA256 `e61ee0b366b751a57ebddd5b8674544309f5a893381325c464a6c59179a1c610`.
-- [Toolkit](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7/full-paper/20261101/geneval-toolkit-20261101.tar.gz) — SHA256 `2e436b0fd5aaf1b0d077faad271711e4912950a11faf47eca040e743947c2daf`.
-- [Contract update](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7/full-paper/20261101/CONTRACT_UPDATE.json). Handoff này và publication đều giữ `full_launch_allowed=false`.
+- [Publication manifest](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/a3bc850ce0a5e90ca1f41adf6275cfa5705cb2f3/full-paper/20261101/publication.json) — SHA256 `54f9b8639586f3cb5299f09b9f84c5fe6e8bbe85e83ffdae7d16f6206fe9ac34`.
+- [Toolkit](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/6a1395bf336ba8cdb0d785ba56009dd0c3fa6155/full-paper/20261101/geneval-toolkit-20261101.tar.gz) — SHA256 `9b7c0aa854133280bad164cc49a0cf4b35534333f7d61d5b10ac6151180890d2`.
+- [Contract update](https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/6a1395bf336ba8cdb0d785ba56009dd0c3fa6155/full-paper/20261101/CONTRACT_UPDATE.json). Handoff này và publication đều giữ `full_launch_allowed=false`.
 
 Trong terminal công ty, đặt `FMRG_PROXY`, `FMRG_PREP_DOWNLOADS` là thư mục tuyệt đối có sẵn; `FMRG_PREP_TOOLKIT` là thư mục mới, parent tồn tại. Dùng một archive/helper mới trong download directory nếu attempt cũ còn đó. Không tự mở allocation mới.
 
@@ -30,12 +30,12 @@ test -d "$FMRG_PREP_DOWNLOADS"
 test ! -e "$FMRG_PREP_TOOLKIT"
 toolkit_archive="$FMRG_PREP_DOWNLOADS/geneval-toolkit-20261101.tar.gz"
 test ! -e "$toolkit_archive"
-curl -fL --retry 2 --proxy "$FMRG_PROXY" --noproxy '' 'https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7/full-paper/20261101/geneval-toolkit-20261101.tar.gz' -o "$toolkit_archive"
-printf '%s  %s\n' '2e436b0fd5aaf1b0d077faad271711e4912950a11faf47eca040e743947c2daf' "$toolkit_archive" | sha256sum -c -
+curl -fL --retry 2 --proxy "$FMRG_PROXY" --noproxy '' 'https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/6a1395bf336ba8cdb0d785ba56009dd0c3fa6155/full-paper/20261101/geneval-toolkit-20261101.tar.gz' -o "$toolkit_archive"
+printf '%s  %s\n' '9b7c0aa854133280bad164cc49a0cf4b35534333f7d61d5b10ac6151180890d2' "$toolkit_archive" | sha256sum -c -
 mkdir "$FMRG_PREP_TOOLKIT"
 tar -xzf "$toolkit_archive" -C "$FMRG_PREP_TOOLKIT" --no-same-owner
 python3 "$FMRG_PREP_TOOLKIT/download_publication.py" \
-  --manifest-url 'https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/08b0ac3905affcb2a1439c05629d451a956885eb/full-paper/20261101/publication.json' --sha256 'e61ee0b366b751a57ebddd5b8674544309f5a893381325c464a6c59179a1c610' \
+  --manifest-url 'https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/a3bc850ce0a5e90ca1f41adf6275cfa5705cb2f3/full-paper/20261101/publication.json' --sha256 '54f9b8639586f3cb5299f09b9f84c5fe6e8bbe85e83ffdae7d16f6206fe9ac34' \
   --dest "$FMRG_EXTRA_ASSETS" --group runtime --group reconstructed
 ```
 
@@ -73,8 +73,12 @@ Canary dùng một demo fixture pinned từ MMDetection và synthetic color patc
 
 ## Data/evidence và blockers còn lại
 
-Reconstructed archive chỉ có ảnh/metadata, không measurement tensors. Freeze operator/kernel/noise-seed/tensor hashes trước tuning. Không trộn reconstructed với author-exact hoặc đổi split theo metric. `strict_evidence.py` mặc định yêu cầu đủ measurement hashes; image-only validation phải khai báo rõ `require_measurements=False`. GenEval aggregation reject missing/duplicate/failed/metadata-mismatched cells và yêu cầu đủ6categories, poolseeds trước mean category scores; không zero-fill.
+Reconstructed image archive và measurement archive là hai gói riêng. Group `measurements` chứa6300safetensors, operator-state/config và manifest đã verify đủ2100ảnh×3tasks. Seeds dùng SHA256(namespace/dataset/original_id/task), first8bytes little-endian; Torch2.7.1 CPU torch.randn, sigma.03, input[-1,1]. Một operator/kernel cố định mỗi task cho cả hai datasets. Đây là reconstructed inputs, không khẳng định trùng author kernel/noise. Trước tuning phải verify hashes và qualify runner adapter nạp đúng frozen measurements/operator states; released CLI hiện tự tạo observations. Không trộn reconstructed với author-exact hoặc đổi split theo metric. `strict_evidence.py` mặc định yêu cầu đủ measurement hashes; image-only validation phải khai báo rõ `require_measurements=False`. GenEval aggregation reject missing/duplicate/failed/metadata-mismatched cells và yêu cầu đủ6categories, poolseeds trước mean category scores; không zero-fill.
 
-Author-exact splits/style16refs+48pairedprompts vẫn chưa có. Paper-formula adapter, VLM differentiable Yes/No adapter/renoiseconstantc, complete tuning objective/grid/baselines, instrumentation và full allocation/deadline chưa chốt. `tuning-plan-draft.json` chỉ là đề xuất độc lập có nhãn reconstructed, chưa run/chưa lấy lại author search budget. Ensemble B200 company canary đang do agent khác kiểm, chưa nhận raw receipt ở task này.
+Author-exact splits/style16refs+48pairedprompts vẫn chưa có. Paper-formula adapter, VLM differentiable Yes/No adapter/renoiseconstantc, runner nạp frozen observations, complete tuning objective/grid/baselines, instrumentation và full allocation/deadline chưa chốt. `tuning-plan-draft.json` chỉ là đề xuất độc lập có nhãn reconstructed, chưa run/chưa lấy lại author search budget. Ensemble B200 company canary đang do agent khác kiểm, chưa nhận raw receipt ở task này.
 
 Trả report bỏ secrets: downloaded groups/hashes, runtime/core/source identities, allocation/job/GPU, canary JSON/log/exitcode/time/VRAM, trạng thái từng blocker có evidence path, kế hoạch bước kế tiếp. Không chạy full matrix, không rerun shortlist, không gọi source generators hoặc tự nâng launch flag. Full execution cần chỉ thị riêng.
+
+## Frozen observation download
+
+Dùng lại `download_publication.py` với publication manifest/SHA ở trên và `--group measurements` để tải archive/manifest/validation (khoảng3.2GB, xem bytes thực trong manifest). Chưa cần gói này để chạy GenEval canary. Không tự gọi `freeze_measurements.py` trên company hoặc tái tạo y trong generator rồi gọi là dùng frozen inputs. Sau verify/extract, giữ file measurement theo manifest và kiểm dtype/shape/tensor SHA trước khi runner được qualify.

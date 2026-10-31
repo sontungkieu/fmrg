@@ -1,0 +1,162 @@
+{
+  "protocol": "fmrg-cumulative-provider-billing-v1",
+  "checked_at_utc": "2026-10-31T19:20:07.639190+00:00",
+  "period_start": "2026-10-26",
+  "period_end": "2026-11-02",
+  "source": "Modal billing report --show-resources --json and app list",
+  "cumulative_cap_usd": "10.00",
+  "cap_resets_monthly": false,
+  "provider_reported_usd": "4.57146277",
+  "current_preparation_reported_usd": "1.32223345",
+  "current_preparation_reserved_ceiling_usd": "1.50",
+  "by_description_usd": {
+    "fmrg-b200-runtime-20261026": "0.48596614",
+    "fmrg-full-paper-prep-20261029": "0.40196609",
+    "fmrg-geneval-publication-20261101": "0.00734331",
+    "fmrg-geneval-runtime-20261101": "0.97278356",
+    "fmrg-hf-publication-20261028": "1.69143202",
+    "fmrg-reconstructed-measurements-20261101": "0.34210658",
+    "fmrg-shortlist-20261026-v1": "0.66986507"
+  },
+  "apps": [
+    {
+      "app_id": "ap-yoQ0Oiihk6GMtUnf1o3FKM",
+      "description": "fmrg-geneval-publication-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 02:18:25+07:00",
+      "stopped_at": "2026-11-01 02:18:42+07:00"
+    },
+    {
+      "app_id": "ap-hodKdLXX3Dj5ngapFtMmI0",
+      "description": "fmrg-reconstructed-measurements-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 02:15:53+07:00",
+      "stopped_at": "2026-11-01 02:17:47+07:00"
+    },
+    {
+      "app_id": "ap-N6JTYj715wpxeCQPq0rkSh",
+      "description": "fmrg-reconstructed-measurements-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 02:13:55+07:00",
+      "stopped_at": "2026-11-01 02:15:11+07:00"
+    },
+    {
+      "app_id": "ap-7EEaMh744NaGKBw1VOzV5t",
+      "description": "fmrg-reconstructed-measurements-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:48:56+07:00",
+      "stopped_at": "2026-11-01 02:13:20+07:00"
+    },
+    {
+      "app_id": "ap-DUCJWYlnpbLZWBv4eRE3Qh",
+      "description": "fmrg-reconstructed-measurements-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:46:36+07:00",
+      "stopped_at": "2026-11-01 01:46:52+07:00"
+    },
+    {
+      "app_id": "ap-FjrGtmI6LNEZ2HuZC16Nxs",
+      "description": "fmrg-geneval-publication-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:41:02+07:00",
+      "stopped_at": "2026-11-01 01:41:28+07:00"
+    },
+    {
+      "app_id": "ap-BgImEICe9OedI7j7IlAJZi",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:32:53+07:00",
+      "stopped_at": "2026-11-01 01:34:16+07:00"
+    },
+    {
+      "app_id": "ap-kUYO5VYEoMwnplSBf0CQUy",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:29:55+07:00",
+      "stopped_at": "2026-11-01 01:31:49+07:00"
+    },
+    {
+      "app_id": "ap-OZNtvYTQKapA01pDOl8515",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:28:40+07:00",
+      "stopped_at": "2026-11-01 01:29:36+07:00"
+    },
+    {
+      "app_id": "ap-sRJTAO9sCFnBpa8Vi9Nahq",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:27:24+07:00",
+      "stopped_at": "2026-11-01 01:27:56+07:00"
+    },
+    {
+      "app_id": "ap-5yiBafLqVq5HcPhs43pYZR",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:23:47+07:00",
+      "stopped_at": "2026-11-01 01:28:08+07:00"
+    },
+    {
+      "app_id": "ap-bSHCsXmAjgGIVVhuKUm8bB",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:20:52+07:00",
+      "stopped_at": "2026-11-01 01:29:59+07:00"
+    },
+    {
+      "app_id": "ap-ICojGxU3Sik0ONsuf786Hb",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:20:52+07:00",
+      "stopped_at": "2026-11-01 01:25:30+07:00"
+    },
+    {
+      "app_id": "ap-fYRO8e9NT5PU24nKidjWZ2",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:11:33+07:00",
+      "stopped_at": "2026-11-01 01:22:32+07:00"
+    },
+    {
+      "app_id": "ap-VDPCEftnWRPjzWso7Pq5Lq",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:08:25+07:00",
+      "stopped_at": "2026-11-01 01:10:00+07:00"
+    },
+    {
+      "app_id": "ap-07MymCvJDnQynzUBNLtpMP",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:06:23+07:00",
+      "stopped_at": "2026-11-01 01:08:08+07:00"
+    },
+    {
+      "app_id": "ap-xeDgLr1FhPxotH1smfNVFY",
+      "description": "fmrg-geneval-runtime-20261101",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-01 01:03:04+07:00",
+      "stopped_at": "2026-11-01 01:03:27+07:00"
+    }
+  ],
+  "all_current_preparation_apps_stopped": true,
+  "full_launch_allowed": false,
+  "caveat": "Provider billing snapshot may lag; these are reported usage costs, not a final invoice. No full experiment or company job launched in this preparation."
+}

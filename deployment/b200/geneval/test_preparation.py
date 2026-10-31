@@ -5,6 +5,7 @@ from build_overlay import command,extract
 from offline_adapter import network_denied,PINS,bind_evaluator_globals
 from strict_evidence import aggregate_geneval,TAGS,validate_inverse_split,normalize_geneval_rows
 from restore_overlay import validate_members
+from download_publication import select
 
 class RuntimeTests(unittest.TestCase):
  def test_build_logging_accepts_path(self):
@@ -50,5 +51,31 @@ class AggregationTests(unittest.TestCase):
 class SplitTests(unittest.TestCase):
  def test_empty_split_never_certified(self):
   with self.assertRaises(AssertionError):validate_inverse_split(dict(protocol='fmrg-dataset-freeze-v1',claim='reconstructed',preprocessing_sha256='a'*64,rows=[]))
+ def test_image_only_freeze_cannot_certify_measurements(self):
+  rows=[]
+  for dataset in ['AFHQ-Dog','FFHQ']:
+   for i in range(1050):
+    rows.append(dict(dataset=dataset,split='tuning' if i<50 else 'evaluation',original_id=str(i),
+     raw_sha256=f'{i:064x}',preprocessed_sha256=f'{i+1050:064x}',source_revision='a'*40,source_repo='example/data',source_file=str(i)+'.png'))
+  manifest=dict(protocol='fmrg-dataset-freeze-v1',claim='reconstructed',preprocessing_sha256='b'*64,rows=rows)
+  self.assertFalse(validate_inverse_split(manifest,require_measurements=False)['measurement_hashes_verified'])
+  with self.assertRaises((AssertionError,KeyError)):validate_inverse_split(manifest)
+  for row in rows:
+   row['observations']={k:dict(noise_seed=1,noise_sigma=.03,operator_config_sha256='c'*64,measurement_sha256='d'*64) for k in ['sr4','motion61','mask64']}
+  self.assertTrue(validate_inverse_split(manifest)['measurement_hashes_verified'])
+
+class PublicationTests(unittest.TestCase):
+ def setUp(self):
+  self.manifest=dict(files=[dict(group='runtime',filename='a.tar.gz',sha256='a'*64,bytes=10,
+   url='https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/'+'b'*40+'/full-paper/20261101/runtime/a.tar.gz')])
+ def test_external_download_url_is_rejected(self):
+  self.manifest['files'][0]['url']='https://example.invalid/file'
+  with self.assertRaises(AssertionError):select(self.manifest,{'runtime'})
+ def test_duplicate_or_traversal_destination_is_rejected(self):
+  for change in ['duplicate','traversal']:
+   m=copy.deepcopy(self.manifest)
+   if change=='duplicate':m['files'].append(m['files'][0])
+   else:m['files'][0]['filename']='../escape'
+   with self.assertRaises(AssertionError):select(m,{'runtime'})
 
 if __name__=='__main__':unittest.main()

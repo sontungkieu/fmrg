@@ -4,7 +4,7 @@
   "full_launch_allowed": false,
   "data": "Use only the 50 reconstructed tuning images per dataset; seal all configs before reading 1000-image evaluation metrics.",
   "track": "Select released_code_v1 or separately qualified paper_formula adapter; never merge their results.",
-  "seeds": {"released_reward_sweep": [0, 1, 2, 3], "paper_all_randomness": "UNKNOWN", "measurement_rule": "SHA256(namespace/dataset/image_id/operator) first8 bytes little-endian; freeze exact generator and tensors before any run."},
+  "seeds": {"released_reward_sweep": [0, 1, 2, 3], "paper_all_randomness": "UNKNOWN", "measurement_rule": "Verify the separately published frozen observation manifest: SHA256(namespace/dataset/original_id/task) first8 bytes little-endian; Torch2.7.1 CPU torch.randn, sigma0.03. One fixed operator per task. Runner consumption must qualify before any tuning."},
   "proposed_inverse_strength_grid": {
     "E_both_datasets": [3, 6, 12],
     "J_AFHQ_Dog": [2.5, 5, 10],
@@ -16,5 +16,5 @@
   "baseline_tuning": "Requires baseline environments and explicit equal-budget policy; not supplied by this draft.",
   "cost_model": "Count all attempted tuning cells, actual transformer forward/recompute/backward, VAE, reward and K3 warmup/discarded selection, transfer, wall time and peak VRAM. NFE labels are not actual counters.",
   "timing": "Obtain bounded per-component timings only after adapters/evaluators/data measurement manifests qualify. No full-matrix timing extrapolation from old pilot.",
-  "remaining_decisions": ["primary tuning metric and tie break", "baseline grids/environments", "paper sampler adapter", "measurement tensors/generator/kernel hashes", "allocation and full-run authorization"]
+  "remaining_decisions": ["primary tuning metric and tie break", "baseline grids/environments", "paper sampler adapter", "runner consumption of frozen measurement/operator states", "allocation and full-run authorization"]
 }

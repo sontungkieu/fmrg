@@ -8,6 +8,7 @@ def publish():
  from huggingface_hub import CommitOperationAdd,hf_hub_download
  client=api();here=Path(__file__).resolve().parent
  build=json.loads((ROOT/'build.json').read_text());preflight=json.loads((ROOT/'preflight.json').read_text());canary=json.loads((ROOT/'canary-a3.json').read_text())
+ measurement_ready=(ROOT/'measurements.json').exists()
  assert preflight['status']=='PASS' and canary['status']=='PASS' and len(canary['profiles'])==2
  for name,digest in canary['code_sha256'].items():assert sha(here/name)==digest,'Publish only the canary-tested evaluator code'
  assert build['overlay']['sha256']=='16126b76c1540e464cdef993f0e7551432f7203d8de000f470244edeabd0b7f1'
@@ -37,9 +38,17 @@ def publish():
   methodological_limits=['Adapted Torch2.7/cu128 evaluator is not the original Torch1.12/cu113 environment.',
    'Synthetic/native/demo canaries do not measure efficacy or establish evaluator score parity.',
    'No FLUX generation, full benchmark or company-node operation was performed in this update.'])
+ if measurement_ready:
+  frozen=json.loads((ROOT/'measurements/measurement-validation.json').read_text())
+  assert frozen['measurement_hashes_verified'] is True and frozen['measurements']==6300
+  update['resolved'].append('6300 reconstructed CPU observations frozen with per-image/task seeds, source/operator state hashes and tensor SHA256')
+  update['pending']=[s for s in update['pending'] if not s.startswith('Operator/kernel/noise')]
+  update['pending'].append('Runner adapter/canary to consume frozen measurement/operator states; original CLI regenerates observations')
+  update['measurement_claim']='RECONSTRUCTED_CPU_OBSERVATIONS_NOT_AUTHOR_EXACT'
  (output/'CONTRACT_UPDATE.json').write_text(json.dumps(update,indent=2))
  names=['canary.py','offline_adapter.py','source-pins.json','restore_overlay.py','download_publication.py',
         'strict_evidence.py','tuning-plan-draft.json','reconstructed-plan.json']
+ if measurement_ready:names.append('measurement-source-pins.json')
  toolkit=ROOT/'geneval-toolkit-20261101.tar.gz'
  with tarfile.open(toolkit,'w:gz') as tar:
   for name in names:
@@ -59,20 +68,29 @@ def publish():
  for name in names:add(PREFIX+'/toolkit/'+name,here/name,'source')
  for name in ['test_preparation.py','build_overlay.py']:
   add(PREFIX+'/toolkit/'+name,here/name,'source')
+ if measurement_ready:add(PREFIX+'/toolkit/freeze_measurements.py',here/'freeze_measurements.py','source')
  first=client.create_commit(REPO,repo_type='dataset',operations=operations,
   commit_message='Publish GenEval cu128 sm100 overlay and B200 technical qualification; no full benchmark').oid
  for row in rows:row['url']=f'https://huggingface.co/datasets/{REPO}/resolve/{first}/'+row['path']
- for kind in ['vlm','reconstructed']:
+ for kind in ['vlm','reconstructed']+(['measurements'] if measurement_ready else []):
   existing=json.loads((ROOT/(kind+'.json')).read_text())
   rows.extend(dict(group=kind,filename=Path(f['path']).name,**f) for f in existing['files'])
  index=dict(protocol='fmrg-public-preparation-20261101-v1',full_launch_allowed=False,files=rows,
   runtime_status='MODAL_B200_TECHNICAL_PASS_COMPANY_PENDING',dataset_claim='reconstructed_not_author_exact',
   vlm_status='WEIGHTS_STAGED_PAPER_ADAPTER_PENDING')
+ if measurement_ready:index['measurement_status']='CPU_FROZEN_RECONSTRUCTED_6300'
  publication=output/'publication.json';publication.write_text(json.dumps(index,indent=2))
  second=client.create_commit(REPO,repo_type='dataset',operations=[CommitOperationAdd(path_in_repo=PREFIX+'/publication.json',path_or_fileobj=str(publication))],
   commit_message='Pin evaluator runtime, VLM and reconstructed split downloads in one manifest').oid
  publication_url=f'https://huggingface.co/datasets/{REPO}/resolve/{second}/{PREFIX}/publication.json'
  text=(here/'HANDOFF_TEMPLATE.md').read_text()
+ if measurement_ready:
+  text=text.replace('Không phải author-exact; measurement tensors chưa sinh.','Không phải author-exact. Đã freeze thêm6300CPU observation tensors theo source operators và per-image/task seeds; không có neural generation.')
+  text=text.replace('Reconstructed archive chỉ có ảnh/metadata, không measurement tensors. Freeze operator/kernel/noise-seed/tensor hashes trước tuning.',
+   'Reconstructed image archive và measurement archive là hai gói riêng. Group `measurements` chứa6300safetensors, operator-state/config và manifest đã verify đủ2100ảnh×3tasks. Seeds dùng SHA256(namespace/dataset/original_id/task), first8bytes little-endian; Torch2.7.1 CPU torch.randn, sigma.03, input[-1,1]. Một operator/kernel cố định mỗi task cho cả hai datasets. Đây là reconstructed inputs, không khẳng định trùng author kernel/noise. Trước tuning phải verify hashes và qualify runner adapter nạp đúng frozen measurements/operator states; released CLI hiện tự tạo observations.')
+  text=text.replace('VLM differentiable Yes/No adapter/renoiseconstantc, complete tuning objective/grid/baselines, instrumentation và full allocation/deadline chưa chốt.',
+   'VLM differentiable Yes/No adapter/renoiseconstantc, runner nạp frozen observations, complete tuning objective/grid/baselines, instrumentation và full allocation/deadline chưa chốt.')
+  text += '\n## Frozen observation download\n\nDùng lại `download_publication.py` với publication manifest/SHA ở trên và `--group measurements` để tải archive/manifest/validation (khoảng3.2GB, xem bytes thực trong manifest). Chưa cần gói này để chạy GenEval canary. Không tự gọi `freeze_measurements.py` trên company hoặc tái tạo y trong generator rồi gọi là dùng frozen inputs. Sau verify/extract, giữ file measurement theo manifest và kiểm dtype/shape/tensor SHA trước khi runner được qualify.\n'
  replacements=dict(PUBLICATION_URL=publication_url,PUBLICATION_SHA=sha(publication),
   TOOLKIT_URL=f'https://huggingface.co/datasets/{REPO}/resolve/{first}/{PREFIX}/'+toolkit.name,TOOLKIT_SHA=sha(toolkit),
   CONTRACT_URL=f'https://huggingface.co/datasets/{REPO}/resolve/{first}/{PREFIX}/CONTRACT_UPDATE.json')
@@ -84,6 +102,7 @@ def publish():
  pointers=[]
  for name in ['README.md','HANDOFF.md']:
   prior=Path(hf_hub_download(REPO,name,repo_type='dataset',revision=old)).read_text()
+  prior=prior.replace(banner,'')
   if prior.startswith('---\n'):
    end=prior.index('\n---',4)+4;value=prior[:end]+'\n'+banner+prior[end:]
   else:value=banner+prior

@@ -1,13 +1,13 @@
 {
-  "handoff_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/2e8aabced378eae29ccacbd396d202fbc8d1b2d3/full-paper/20261101/PREPARATION_HANDOFF.md",
-  "handoff_sha256": "38c042b447f1e858f27cb2d0fbb1c04d0c9a016ff782988e1da05037fb664d09",
-  "publication_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/08b0ac3905affcb2a1439c05629d451a956885eb/full-paper/20261101/publication.json",
-  "publication_sha256": "e61ee0b366b751a57ebddd5b8674544309f5a893381325c464a6c59179a1c610",
-  "toolkit_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7/full-paper/20261101/geneval-toolkit-20261101.tar.gz",
-  "toolkit_sha256": "2e436b0fd5aaf1b0d077faad271711e4912950a11faf47eca040e743947c2daf",
-  "contract_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7/full-paper/20261101/CONTRACT_UPDATE.json",
-  "runtime_commit": "5a5cc2c18fdfccc5819dd92c0db49bdb543c81a7",
-  "publication_commit": "08b0ac3905affcb2a1439c05629d451a956885eb",
-  "handoff_commit": "2e8aabced378eae29ccacbd396d202fbc8d1b2d3",
+  "handoff_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/3bd3a35d8226b8353a1a6c23d13303618cdce683/full-paper/20261101/PREPARATION_HANDOFF.md",
+  "handoff_sha256": "ad3c06b2de3249e47a961dffc4041a6bf2a190912164d9811386401cb8ddc743",
+  "publication_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/a3bc850ce0a5e90ca1f41adf6275cfa5705cb2f3/full-paper/20261101/publication.json",
+  "publication_sha256": "54f9b8639586f3cb5299f09b9f84c5fe6e8bbe85e83ffdae7d16f6206fe9ac34",
+  "toolkit_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/6a1395bf336ba8cdb0d785ba56009dd0c3fa6155/full-paper/20261101/geneval-toolkit-20261101.tar.gz",
+  "toolkit_sha256": "9b7c0aa854133280bad164cc49a0cf4b35534333f7d61d5b10ac6151180890d2",
+  "contract_url": "https://huggingface.co/datasets/codemaivanngu/fmrg-b200-portable/resolve/6a1395bf336ba8cdb0d785ba56009dd0c3fa6155/full-paper/20261101/CONTRACT_UPDATE.json",
+  "runtime_commit": "6a1395bf336ba8cdb0d785ba56009dd0c3fa6155",
+  "publication_commit": "a3bc850ce0a5e90ca1f41adf6275cfa5705cb2f3",
+  "handoff_commit": "3bd3a35d8226b8353a1a6c23d13303618cdce683",
   "full_launch_allowed": false
 }

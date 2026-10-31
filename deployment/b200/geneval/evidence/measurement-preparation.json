@@ -1,0 +1,43 @@
+{
+  "protocol": "fmrg-reconstructed-observation-preparation-receipt-v1",
+  "full_launch_allowed": false,
+  "claim": "reconstructed_CPU_inputs_not_author_exact",
+  "scientific_generation_performed": false,
+  "gpu_used_for_measurement_preparation": false,
+  "image_count": 2100,
+  "observation_count": 6300,
+  "observation_tasks": [
+    "sr4",
+    "motion61",
+    "mask64"
+  ],
+  "cpu_freeze_seconds": 721.984542506,
+  "archive_bytes": 3117966186,
+  "archive_member_count": 6308,
+  "safetensors_member_count": 6303,
+  "attempt_history": [
+    {
+      "app_id": "ap-DUCJWYlnpbLZWBv4eRE3Qh",
+      "status": "FAILED",
+      "reason": "Frozen source was not mounted; no observations generated."
+    },
+    {
+      "app_id": "ap-7EEaMh744NaGKBw1VOzV5t",
+      "status": "CPU_FREEZE_AND_ARCHIVE_COMPLETE_PUBLICATION_TIMED_OUT",
+      "reason": "Subprocess 1450-second limit reached during publication; data and validation retained."
+    },
+    {
+      "app_id": "ap-N6JTYj715wpxeCQPq0rkSh",
+      "status": "ARCHIVE_INTEGRITY_PASS_PUBLICATION_FAILED",
+      "reason": "6308 unique archive members verified; publisher invoked in system Python without huggingface_hub. Corrected to existing core venv; no dependency installation."
+    },
+    {
+      "app_id": "ap-hodKdLXX3Dj5ngapFtMmI0",
+      "status": "PUBLICATION_PASS",
+      "publication_commit": "e9fbd7511b0db98e0daebf7462779022f792ea2b"
+    }
+  ],
+  "hash_evidence": "Producer read each written safetensors file to compute SHA256 and separately hashed the contiguous float32 tensor payload; operator states/configs and five frozen source files also hashed. Company consumer must verify those identities before use.",
+  "remaining_gate": "Qualify a runner that loads frozen observations/operator states; original CLI regenerates observations.",
+  "publication_receipt": "measurement-publication.json"
+}

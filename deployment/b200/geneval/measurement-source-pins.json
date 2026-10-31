@@ -1,0 +1,10 @@
+{
+  "scientific_source": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+  "files": {
+    "functions/degradation.py": "61a004ff9de06e4e51aeaf24a55ef7447622398b6e64250c02a569d0b881b113",
+    "functions/measurements.py": "965d6cd414f4f18e109d53924b075890ceb4506f8e2f42cb6d246e4f8a85dbe8",
+    "functions/svd_operators.py": "72165883ffad8bbcf64c83ef4806761a313422a2fc5cea51903dd00a93ec44c0",
+    "utils/blur_util.py": "bd70619a9dce7933c1d07561893f34dd5545772014eea018e4ae522b9e012a31",
+    "utils/motionblur.py": "21adc43267bee348e3417568ff4f2feded1d789acbbd8cca4f693951f206cef7"
+  }
+}

@@ -7,23 +7,25 @@
   "resolved": [
     "GenEval native sm100 build and Modal B200 technical canary, R50 primary/Swin-S control, offline OpenAI CLIP QuickGELU",
     "Skywork authorized download and pinned public weights mirror",
-    "User-authorized reconstructed AFHQ-Dog/FFHQ image splits,2100 images,original/source/preprocessing hashes and FFHQ attribution"
+    "User-authorized reconstructed AFHQ-Dog/FFHQ image splits,2100 images,original/source/preprocessing hashes and FFHQ attribution",
+    "6300 reconstructed CPU observations frozen with per-image/task seeds, source/operator state hashes and tensor SHA256"
   ],
   "pending": [
     "Company GenEval canary and GPU UUID/allocation receipt",
     "Company four-reward ensemble canary receipt",
     "Author-exact splits remain unavailable; reconstructed is a separate claim",
-    "Operator/kernel/noise seeds and measurement tensor freeze",
     "Paper-formula sampler adapter",
     "Skywork paper Yes/No reward differentiable adapter and renoiseconstantc",
     "Style16refs+48pairedprompts/configs",
     "Tuning objective/tie-break/full baseline environments and budgets",
-    "Complete compute instrumentation and full allocation/deadline/authorization"
+    "Complete compute instrumentation and full allocation/deadline/authorization",
+    "Runner adapter/canary to consume frozen measurement/operator states; original CLI regenerates observations"
   ],
   "scoring": "strict_evidence rejects missing/duplicate/failed cells; complete six-category aggregation only",
   "methodological_limits": [
     "Adapted Torch2.7/cu128 evaluator is not the original Torch1.12/cu113 environment.",
     "Synthetic/native/demo canaries do not measure efficacy or establish evaluator score parity.",
     "No FLUX generation, full benchmark or company-node operation was performed in this update."
-  ]
+  ],
+  "measurement_claim": "RECONSTRUCTED_CPU_OBSERVATIONS_NOT_AUTHOR_EXACT"
 }
