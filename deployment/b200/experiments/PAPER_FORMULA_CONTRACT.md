@@ -47,6 +47,8 @@ are distinct from this gain-inside-inner-loop realization.
 This comparison changes known paper settings together, not one variable at a
 time. It is not a causal ablation or an efficacy test. No retuning follows
 viewing these smoke results. Actual compute replaces NFE labels in the report.
-Both float predictions and PNGs are saved. LPIPS256 and the source-style224
-bilinear metric are named separately. Author-exact data, tuning, baselines,
+Both float predictions and PNGs are saved. GPU float LPIPS256/224[-1,1] are
+diagnostics. The literal released CLI uses quantized PNG/PIL224/ToTensor[0,1]
+without Normalize; the collector separately rescores that recipe on CPU. These
+protocols are named separately and must not be mixed. Author-exact data, tuning, baselines,
 reward/VLM guidance and full allocation remain separate contracts.
