@@ -1,0 +1,640 @@
+{
+  "protocol": "fmrg-bounded-integrated-smoke-report-v1",
+  "status": "COMPLETE_12_OF_12",
+  "full_launch_allowed": false,
+  "expected": 12,
+  "completed": 12,
+  "failed": [],
+  "missing": [],
+  "claim": "Reconstructed tuning-only integrated smoke using released sampler; not paper-formula reproduction, author-exact inputs or efficacy.",
+  "deviations": [
+    "flow_map1 rather than paper high-NFE flow_map2",
+    "norm/pixel rather than paper squared/pixel or released CLI norm/latent",
+    "No paper early-stop adapter",
+    "Explicit reconstructed inputs and independent class prompts"
+  ],
+  "plan_sha256": "f15e96052ddfcadb6c4b2e2ae04e4fd82e196060cc063665e8e0c80eaefbbe91",
+  "runner_sha256": "6db23e85ff49b8346e9590961289ad844c5a99b9302f41308bebb7e0deb6754f",
+  "phases": [
+    {
+      "protocol": "fmrg-frozen-integrated-smoke-v1",
+      "full_launch_allowed": false,
+      "expected": 1,
+      "completed": 1,
+      "phase": "first",
+      "deadline_unix": 1793493218.7397714,
+      "plan_sha256": "f15e96052ddfcadb6c4b2e2ae04e4fd82e196060cc063665e8e0c80eaefbbe91",
+      "runner_sha256": "6db23e85ff49b8346e9590961289ad844c5a99b9302f41308bebb7e0deb6754f",
+      "claim": "Reconstructed tuning-only integrated smoke using released sampler; not paper-formula reproduction, author-exact inputs or efficacy.",
+      "load_seconds": 73.69714252883568,
+      "torch": "2.7.1+cu128",
+      "sampler_sha256": "8da781f6902d3c8839603e20fbb8ed0adfc0e5721666806999a106b45bf08cdc",
+      "loader_sha256": "cddf4e21e5c5dc0e4e9ad2ab989417a28c2891d407094a34ba66aade0c262c9f",
+      "lora_sha256": "1ac550f6800fb086986643475ba9ebbec7bb84bd87b9cab3573ec693332232be",
+      "metric": "LPIPS VGG v0.1,256px,RGB[-1,1],no resize",
+      "source": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+      "runtime_wrapper_sha256": "63453cb9fb9bca4465b2e275ed10e44d8080a223ab860817809a6928a1ac9e18",
+      "status": "COMPLETE",
+      "error": null,
+      "total_seconds": 81.00320217106491,
+      "gpu_uuid_sha256": "79e5b7aeafd8934918ee444499cad0b760932a1d34660c129767d540936907a1"
+    },
+    {
+      "protocol": "fmrg-frozen-integrated-smoke-v1",
+      "full_launch_allowed": false,
+      "expected": 11,
+      "completed": 11,
+      "phase": "rest",
+      "deadline_unix": 1793493218.7397714,
+      "plan_sha256": "f15e96052ddfcadb6c4b2e2ae04e4fd82e196060cc063665e8e0c80eaefbbe91",
+      "runner_sha256": "6db23e85ff49b8346e9590961289ad844c5a99b9302f41308bebb7e0deb6754f",
+      "claim": "Reconstructed tuning-only integrated smoke using released sampler; not paper-formula reproduction, author-exact inputs or efficacy.",
+      "load_seconds": 38.442042221780866,
+      "torch": "2.7.1+cu128",
+      "sampler_sha256": "8da781f6902d3c8839603e20fbb8ed0adfc0e5721666806999a106b45bf08cdc",
+      "loader_sha256": "cddf4e21e5c5dc0e4e9ad2ab989417a28c2891d407094a34ba66aade0c262c9f",
+      "lora_sha256": "1ac550f6800fb086986643475ba9ebbec7bb84bd87b9cab3573ec693332232be",
+      "metric": "LPIPS VGG v0.1,256px,RGB[-1,1],no resize",
+      "source": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+      "runtime_wrapper_sha256": "63453cb9fb9bca4465b2e275ed10e44d8080a223ab860817809a6928a1ac9e18",
+      "status": "COMPLETE",
+      "error": null,
+      "total_seconds": 475.2275884989649,
+      "gpu_uuid_sha256": "79e5b7aeafd8934918ee444499cad0b760932a1d34660c129767d540936907a1"
+    }
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "sr4",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 24.633777319204842,
+      "lpips_vgg": 0.38466593623161316,
+      "measurement_rmse": 0.07338094711303711,
+      "seconds": 6.683745284099132,
+      "peak_allocated_gib": 23.372246742248535,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "00-AFHQ-Dog-sr4-E.png",
+      "image_sha256": "d1a1aa663cc9cc443d99b78460b9f5a32bce568ad20f94e1e3d08c4e876935b6",
+      "record_sha256": "880c2604f4a0076e02a0b6384f9a056a764b12208d04acc677787391257878ff",
+      "measurement_payload_sha256": "ce06babfba8d31127f78baa4afec84e1e7cde9debd65b8d6e19b683498195f46",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "restore": {
+        "restore_path": "svd-assign"
+      }
+    },
+    {
+      "index": 1,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "sr4",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 27.20033776725659,
+      "lpips_vgg": 0.2804673910140991,
+      "measurement_rmse": 0.029410598799586296,
+      "seconds": 69.78911569621414,
+      "peak_allocated_gib": 23.633034229278564,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "01-AFHQ-Dog-sr4-J.png",
+      "image_sha256": "86cfad4f052551f3110800ca9315479c416c177be3d46089da4b07bd73549d94",
+      "record_sha256": "78a9a191e7a4f5c2dd7de383df353e49a67bbe7e60ff660c243640073b7e903d",
+      "measurement_payload_sha256": "ce06babfba8d31127f78baa4afec84e1e7cde9debd65b8d6e19b683498195f46",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "restore": {
+        "restore_path": "svd-assign"
+      }
+    },
+    {
+      "index": 2,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "motion61",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 22.33505799513076,
+      "lpips_vgg": 0.3870249390602112,
+      "measurement_rmse": 0.0338575541973114,
+      "seconds": 6.26089893002063,
+      "peak_allocated_gib": 23.373659133911133,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "02-AFHQ-Dog-motion61-E.png",
+      "image_sha256": "9afce2b7196da113f302939213bea37db8e8493a2d98b913b025ccce51c2628e",
+      "record_sha256": "0d6a720946e90042c4b8f0d089d7592d11d808d80f9600acf3acfd1466aabeee",
+      "measurement_payload_sha256": "23b716b21a129caefe4ba781d1791b061fe8c566ee3b790bb6244ba4947e165f",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "restore": {
+        "restore_path": "update_weights"
+      }
+    },
+    {
+      "index": 3,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "motion61",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 24.03586562040909,
+      "lpips_vgg": 0.3614139258861542,
+      "measurement_rmse": 0.037860482931137085,
+      "seconds": 65.39804421411827,
+      "peak_allocated_gib": 23.636765956878662,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "03-AFHQ-Dog-motion61-J.png",
+      "image_sha256": "896ad4f621a1918df54508bd0186b087cc5271aa3c6c9ac9a7918523188f14c7",
+      "record_sha256": "f5c65589cf4409798037749ad1fd392580866f16fd70177d6b8ee5534e0b7ee6",
+      "measurement_payload_sha256": "23b716b21a129caefe4ba781d1791b061fe8c566ee3b790bb6244ba4947e165f",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "restore": {
+        "restore_path": "update_weights"
+      }
+    },
+    {
+      "index": 4,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "mask64",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 23.237680414584375,
+      "lpips_vgg": 0.23857659101486206,
+      "measurement_rmse": 0.06293613463640213,
+      "seconds": 6.390620001126081,
+      "peak_allocated_gib": 23.37361717224121,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "04-AFHQ-Dog-mask64-E.png",
+      "image_sha256": "55f6b2e6faef9d8cd54ba514e9abf6079384e8148cb22118d272115fa31a41e2",
+      "record_sha256": "1bb50d5fa3cfc92c954b753949c81ce09b8a339a97e209a50a092e9df0ad4cd9",
+      "measurement_payload_sha256": "a7b68301b0e04aa480f9bac24e37689bd1195f9075553fc525483d42ca6596d6",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "restore": {
+        "restore_path": "deterministic-verify"
+      }
+    },
+    {
+      "index": 5,
+      "dataset": "AFHQ-Dog",
+      "original_id": "shard0-row00089",
+      "task": "mask64",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 26.08828012613976,
+      "lpips_vgg": 0.24458849430084229,
+      "measurement_rmse": 0.06465057283639908,
+      "seconds": 66.18011503200978,
+      "peak_allocated_gib": 23.63672399520874,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "05-AFHQ-Dog-mask64-J.png",
+      "image_sha256": "a717c140e810a7fe8fa302f19b5339a01b1dd151fdc474a89632862125edb78c",
+      "record_sha256": "05df156c371b36df966b6c2491b5864bc99a8106b71e640ad5de115224dea6ca",
+      "measurement_payload_sha256": "a7b68301b0e04aa480f9bac24e37689bd1195f9075553fc525483d42ca6596d6",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "restore": {
+        "restore_path": "deterministic-verify"
+      }
+    },
+    {
+      "index": 6,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "sr4",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 30.230236996623397,
+      "lpips_vgg": 0.33071282505989075,
+      "measurement_rmse": 0.0341198556125164,
+      "seconds": 5.951654931996018,
+      "peak_allocated_gib": 23.372246742248535,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "06-FFHQ-sr4-E.png",
+      "image_sha256": "2aa6023cecf15b8071cb8a9db7a176ffd3ccadea639c1e999380724d8c268bfb",
+      "record_sha256": "9175134a9b12ecee85838085e5f53d89d9b0fccceed93ec761fd41bbddae3ced",
+      "measurement_payload_sha256": "3b09ea2c33d55bdfb3c6776ea493eaaa69c7361b07c11f0c0ce6a25bcef5dc18",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "restore": {
+        "restore_path": "svd-assign"
+      }
+    },
+    {
+      "index": 7,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "sr4",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 31.651728217717647,
+      "lpips_vgg": 0.24561092257499695,
+      "measurement_rmse": 0.02465054951608181,
+      "seconds": 65.77387601602823,
+      "peak_allocated_gib": 23.635353565216064,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "07-FFHQ-sr4-J.png",
+      "image_sha256": "45e7f028f9535cb83fc31d8970baad8fe323f148cdec0ba8431b0c0ff97ece64",
+      "record_sha256": "21394739073e4978e36a95ebc5741bb0edfeade8dd1666223f1b58591723ff4d",
+      "measurement_payload_sha256": "3b09ea2c33d55bdfb3c6776ea493eaaa69c7361b07c11f0c0ce6a25bcef5dc18",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "restore": {
+        "restore_path": "svd-assign"
+      }
+    },
+    {
+      "index": 8,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "motion61",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 27.295618787028335,
+      "lpips_vgg": 0.3568405508995056,
+      "measurement_rmse": 0.03159165009856224,
+      "seconds": 6.12771797273308,
+      "peak_allocated_gib": 23.373659133911133,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "08-FFHQ-motion61-E.png",
+      "image_sha256": "0f38d88fc755fac067961963e8d6bf297bda3aed51e92e2c2f3609a57eefe536",
+      "record_sha256": "8ead572f85077ac2bf83e542c2ee146748e27e27eee46d97dcd98a2fad99841d",
+      "measurement_payload_sha256": "329e76d49f5f46141b79072e3ad5852c250d1a854fd679222f18b9af87434247",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "restore": {
+        "restore_path": "update_weights"
+      }
+    },
+    {
+      "index": 9,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "motion61",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 28.542325395562447,
+      "lpips_vgg": 0.3326244652271271,
+      "measurement_rmse": 0.0324060395359993,
+      "seconds": 66.66917552193627,
+      "peak_allocated_gib": 23.636765956878662,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "09-FFHQ-motion61-J.png",
+      "image_sha256": "77724b7e57dfc1c81dbfe8702e9439b5b1ec83309d39e5f46f327789f6423583",
+      "record_sha256": "2c3905dc4514db7ad4c3fed11b3ade510359237847fc956f92b2b6cd5b025888",
+      "measurement_payload_sha256": "329e76d49f5f46141b79072e3ad5852c250d1a854fd679222f18b9af87434247",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "restore": {
+        "restore_path": "update_weights"
+      }
+    },
+    {
+      "index": 10,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "mask64",
+      "method": "E",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 31.977054888046123,
+      "lpips_vgg": 0.1711616963148117,
+      "measurement_rmse": 0.03870007395744324,
+      "seconds": 5.837413264904171,
+      "peak_allocated_gib": 23.37361717224121,
+      "counts": {
+        "predict_forward": 50,
+        "transformer_forward": 50,
+        "observed_block_forward_including_recompute": 2850,
+        "vae_decode": 251,
+        "autograd_calls": 250
+      },
+      "image_file": "10-FFHQ-mask64-E.png",
+      "image_sha256": "c425e11fe9a8d16a75df678467bd926e23338cab3f28741a8120d7236b24eb83",
+      "record_sha256": "d9310f4c6bb8068361188bd735e90cac8e73d9edf0a5a3c6349fa54b1516f85b",
+      "measurement_payload_sha256": "3028bb2903649e4d3e3f88880322e4e45abf7b4e511d63e136f96a91b0ebfcc4",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "restore": {
+        "restore_path": "deterministic-verify"
+      }
+    },
+    {
+      "index": 11,
+      "dataset": "FFHQ",
+      "original_id": "02117",
+      "task": "mask64",
+      "method": "J",
+      "seed": 0,
+      "status": "COMPLETE",
+      "psnr": 33.74972651085464,
+      "lpips_vgg": 0.1472073495388031,
+      "measurement_rmse": 0.039726607501506805,
+      "seconds": 66.90447213314474,
+      "peak_allocated_gib": 23.63672399520874,
+      "counts": {
+        "predict_forward": 200,
+        "transformer_forward": 200,
+        "observed_block_forward_including_recompute": 22800,
+        "vae_decode": 201,
+        "autograd_calls": 200
+      },
+      "image_file": "11-FFHQ-mask64-J.png",
+      "image_sha256": "6280d87fd64003738fe49e66e269ec447896e827f5e5334385dccc9d0f0d1b96",
+      "record_sha256": "1a8e58c1ec2f4a2b7d3f644c75ba1120d1bc54297b7dd0b8175b17c67f0153e2",
+      "measurement_payload_sha256": "3028bb2903649e4d3e3f88880322e4e45abf7b4e511d63e136f96a91b0ebfcc4",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "restore": {
+        "restore_path": "deterministic-verify"
+      }
+    }
+  ],
+  "operator_source_hashes": {
+    "functions/degradation.py": "61a004ff9de06e4e51aeaf24a55ef7447622398b6e64250c02a569d0b881b113",
+    "functions/measurements.py": "965d6cd414f4f18e109d53924b075890ceb4506f8e2f42cb6d246e4f8a85dbe8",
+    "functions/svd_operators.py": "72165883ffad8bbcf64c83ef4806761a313422a2fc5cea51903dd00a93ec44c0",
+    "utils/blur_util.py": "bd70619a9dce7933c1d07561893f34dd5545772014eea018e4ae522b9e012a31",
+    "utils/motionblur.py": "21adc43267bee348e3417568ff4f2feded1d789acbbd8cca4f693951f206cef7"
+  },
+  "counts": {
+    "predict_forward": 1500,
+    "transformer_forward": 1500,
+    "observed_block_forward_including_recompute": 153900,
+    "vae_decode": 2712,
+    "autograd_calls": 2700
+  },
+  "sampling_seconds": 437.96684899833053,
+  "phase_total_seconds": 556.2307906700298,
+  "max_peak_allocated_gib": 23.636765956878662,
+  "metrics": "PSNR RGB[0,1] and LPIPS VGG v0.1,256px[-1,1]; measured on float predictions before PNG quantization.",
+  "numerical_parity_claim": false,
+  "efficacy_claim": false,
+  "costs": {
+    "company_usd": 0,
+    "modal_launched": false,
+    "cumulative_cap_usd": 10
+  },
+  "scope": "Two tuning images,one per dataset; one seed; no selection/tuning/full matrix.",
+  "remaining": [
+    "Paper-formula sampler adapter and its separate qualification",
+    "flow_map2/time-grid/early-stop contract for paper track",
+    "Tuning objective,selection policy,baselines and full compute budget",
+    "Full allocation/deadline/launch authorization",
+    "Author-exact inputs/style refs/prompts and VLM renoise constant remain unresolved"
+  ],
+  "raw_company_report_sha256": "f17000d595778164371476197073b3cbd3c83137b2622d25a408908a70a481ca",
+  "public_export": "Numeric results and hashes preserved; hardware UUID replaced with fingerprint. Raw report remains on company storage.",
+  "settings": {
+    "sample_mode": "flow_map1",
+    "loss_mode": "pixel",
+    "loss_func": "norm",
+    "early_stop": 0,
+    "guidance_scale": 3.5,
+    "resolution": 256,
+    "prompts": {
+      "AFHQ-Dog": "a photo of a dog",
+      "FFHQ": "a photo of a human face"
+    }
+  },
+  "E": {
+    "num_steps": 50,
+    "step_size": 6.0,
+    "grad_mode": "euc",
+    "num_optim_iters": 5,
+    "normalize_grad": false
+  },
+  "J": {
+    "num_steps": 200,
+    "num_optim_iters": 1,
+    "normalize_grad": true,
+    "step_size": {
+      "AFHQ-Dog": 5.0,
+      "FFHQ": 3.0
+    },
+    "grad_mode": "jac"
+  },
+  "inputs": [
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "sr4",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/sr4/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "ce06babfba8d31127f78baa4afec84e1e7cde9debd65b8d6e19b683498195f46",
+      "measurement_sha256": "37a8edb46b9c1187efcc0b06aa96f7a4ad1f4aa95b0b74f2db2b64bbe3a045ce",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "operator_config_sha256": "f8d08ec02856681407734d2241396faf70670c319e075747305dc8ea3e5936be"
+    },
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "sr4",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/sr4/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "ce06babfba8d31127f78baa4afec84e1e7cde9debd65b8d6e19b683498195f46",
+      "measurement_sha256": "37a8edb46b9c1187efcc0b06aa96f7a4ad1f4aa95b0b74f2db2b64bbe3a045ce",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "operator_config_sha256": "f8d08ec02856681407734d2241396faf70670c319e075747305dc8ea3e5936be"
+    },
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "motion61",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/motion61/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "23b716b21a129caefe4ba781d1791b061fe8c566ee3b790bb6244ba4947e165f",
+      "measurement_sha256": "0d53151b60cdd3468d4fdc4fc32c318cf41584e98b7feb37eed1dce44fe1c787",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "operator_config_sha256": "5b65d64a884812aa60220cb60bfaf184c609359f480e4ce63bee6bccc2e5b0ad"
+    },
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "motion61",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/motion61/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "23b716b21a129caefe4ba781d1791b061fe8c566ee3b790bb6244ba4947e165f",
+      "measurement_sha256": "0d53151b60cdd3468d4fdc4fc32c318cf41584e98b7feb37eed1dce44fe1c787",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "operator_config_sha256": "5b65d64a884812aa60220cb60bfaf184c609359f480e4ce63bee6bccc2e5b0ad"
+    },
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "mask64",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/mask64/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "a7b68301b0e04aa480f9bac24e37689bd1195f9075553fc525483d42ca6596d6",
+      "measurement_sha256": "b9e1010fa47d7c9a7e031ab18364299d6e2720d5975c774367fea5da9e70aa7b",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "operator_config_sha256": "adc9f0171e731b98aa8216ca8788501f5009eee3dc81f05fa2fa40601a9679f8"
+    },
+    {
+      "dataset": "AFHQ-Dog",
+      "split": "tuning",
+      "original_id": "shard0-row00089",
+      "task": "mask64",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "AFHQ-Dog/tuning/mask64/shard0-row00089.safetensors",
+      "tensor_payload_sha256": "a7b68301b0e04aa480f9bac24e37689bd1195f9075553fc525483d42ca6596d6",
+      "measurement_sha256": "b9e1010fa47d7c9a7e031ab18364299d6e2720d5975c774367fea5da9e70aa7b",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "operator_config_sha256": "adc9f0171e731b98aa8216ca8788501f5009eee3dc81f05fa2fa40601a9679f8"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "sr4",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/sr4/02117.safetensors",
+      "tensor_payload_sha256": "3b09ea2c33d55bdfb3c6776ea493eaaa69c7361b07c11f0c0ce6a25bcef5dc18",
+      "measurement_sha256": "923981bd8a893df448a702b1f8e2ba406c293d69bae8a4bcdacac0e01002bfde",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "operator_config_sha256": "f8d08ec02856681407734d2241396faf70670c319e075747305dc8ea3e5936be"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "sr4",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/sr4/02117.safetensors",
+      "tensor_payload_sha256": "3b09ea2c33d55bdfb3c6776ea493eaaa69c7361b07c11f0c0ce6a25bcef5dc18",
+      "measurement_sha256": "923981bd8a893df448a702b1f8e2ba406c293d69bae8a4bcdacac0e01002bfde",
+      "operator_state_sha256": "28e20d51072bfc23aed4783e369de6d6361d0ce033ff6f51e102d7df76c6bf4d",
+      "operator_config_sha256": "f8d08ec02856681407734d2241396faf70670c319e075747305dc8ea3e5936be"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "motion61",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/motion61/02117.safetensors",
+      "tensor_payload_sha256": "329e76d49f5f46141b79072e3ad5852c250d1a854fd679222f18b9af87434247",
+      "measurement_sha256": "b52dd6ac78a1b5ec7f86e7a550b2171b9b900027caedf43d7ff78dce8ec05b4a",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "operator_config_sha256": "5b65d64a884812aa60220cb60bfaf184c609359f480e4ce63bee6bccc2e5b0ad"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "motion61",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/motion61/02117.safetensors",
+      "tensor_payload_sha256": "329e76d49f5f46141b79072e3ad5852c250d1a854fd679222f18b9af87434247",
+      "measurement_sha256": "b52dd6ac78a1b5ec7f86e7a550b2171b9b900027caedf43d7ff78dce8ec05b4a",
+      "operator_state_sha256": "14dc3d8ea9f697959d69aa9144a4e4e5ef44bc91ed840c17eae47f5fc94a0fea",
+      "operator_config_sha256": "5b65d64a884812aa60220cb60bfaf184c609359f480e4ce63bee6bccc2e5b0ad"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "mask64",
+      "method": "E",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/mask64/02117.safetensors",
+      "tensor_payload_sha256": "3028bb2903649e4d3e3f88880322e4e45abf7b4e511d63e136f96a91b0ebfcc4",
+      "measurement_sha256": "4ed252db70b1d02173a9ac54a978d90ce5919442d68884b6dfe16b6aea0f34a7",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "operator_config_sha256": "adc9f0171e731b98aa8216ca8788501f5009eee3dc81f05fa2fa40601a9679f8"
+    },
+    {
+      "dataset": "FFHQ",
+      "split": "tuning",
+      "original_id": "02117",
+      "task": "mask64",
+      "method": "J",
+      "seed": 0,
+      "tensor_path": "FFHQ/tuning/mask64/02117.safetensors",
+      "tensor_payload_sha256": "3028bb2903649e4d3e3f88880322e4e45abf7b4e511d63e136f96a91b0ebfcc4",
+      "measurement_sha256": "4ed252db70b1d02173a9ac54a978d90ce5919442d68884b6dfe16b6aea0f34a7",
+      "operator_state_sha256": "d71f02509a54c92633560419f84b7a8dda8a7fbdd37dc2236f0129826f447088",
+      "operator_config_sha256": "adc9f0171e731b98aa8216ca8788501f5009eee3dc81f05fa2fa40601a9679f8"
+    }
+  ],
+  "runner_source_commit": "e84e3d0e1eec542442a4ae48df50442f467e65db",
+  "collector_sha256": "59f1de5f67ffcbd644f11e032d6e7bfc4c491a7ab6441ed218dfe939e7fc2a63"
+}

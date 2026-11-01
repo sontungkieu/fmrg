@@ -1,18 +1,28 @@
 # Portable B200 setup and company replay
 
+The [company frozen-input smoke report](results/frozen-smoke-20261101/REPORT.md)
+records 12/12 completed E/J cells on 2026-11-01, with image/input hashes,
+resolved settings, measured call counts and PSNR/LPIPS. This is an integrated
+smoke on two reconstructed tuning images, not full paper reproduction.
+
 The bounded [frozen-input E/J smoke runner](experiments/frozen_smoke.py) runs
-one first cell, then the remaining11 only after that cell completes. Both phases
-share a30-minute deadline and write to new output directories. It preserves the
+one first cell, then the remaining 11 only after that cell completes. Both phases
+share a 30-minute deadline and write to new output directories. It preserves the
 released sampler, precreates seeded latent noise outside the observation guard,
 uses verified frozen tensors/states and records images, PSNR,256px LPIPS VGG,
 actual call counts and sigma grids. Its explicit norm/pixel loss and flow_map1
 profile are smoke settings, not the paper-formula contract or an efficacy result.
 Use only the authorized existing company GPU via the guarded bridge; no full launch.
+The [collector](experiments/collect_frozen_smoke.py) checks all 12 cell identities,
+image/record hashes, counters and phase completion before creating the report and
+contact sheet. Metrics use floating-point predictions before PNG quantization;
+the preview is separate from metric computation.
 
 The [2026-11-01 GenEval/VLM/reconstructed-data update](geneval/PREPARATION_HANDOFF.md)
 adds a separate evaluator overlay with Modal B200 technical qualification,
 authorized Skywork weights and explicitly reconstructed image splits. It keeps
-full execution disabled; the company node still needs its own evaluator canary.
+full execution disabled; company evaluator qualification is tracked separately
+in its runtime and canary receipts.
 
 The 2026-10-29 preparation is in
 [full_paper/FULL_PAPER_HANDOFF.md](full_paper/FULL_PAPER_HANDOFF.md): audited
