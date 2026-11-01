@@ -1,5 +1,12 @@
 # Portable B200 setup and company replay
 
+The [reconstructed inverse E/J campaign handoff](experiments/INVERSE_CAMPAIGN_HANDOFF.md)
+and [sealed contract](experiments/INVERSE_RECONSTRUCTED_CONTRACT.json) define the
+new user-authorized 12,000-output evaluation scope. They replace the old global
+blockers for this scope with explicit reconstructed-data/practical-formula
+conventions; launch still requires the matching batch qualification and bounded
+company allocation. Reward/VLM/style and all-paper execution remain separate.
+
 The [inverse practical-paper adapter contract](experiments/PAPER_FORMULA_CONTRACT.md)
 defines a separate E.2/E.3 reconstruction and a matched 12-pair smoke against
 the untouched released inverse sampler. Its tests cover analytic gradients,

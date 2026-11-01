@@ -1,0 +1,52 @@
+{
+  "protocol": "fmrg-reconstructed-inverse-ej-v1",
+  "date": "2026-11-02",
+  "status": "SCIENTIFIC_CONVENTIONS_SEALED_EXECUTION_REQUIRES_QUALIFICATION_AND_ALLOCATION",
+  "scope": "12,000 inverse E/J outputs; one practical-reconstruction track, not both released and adapter tracks",
+  "data_claim": "reconstructed",
+  "author_exact_claim": false,
+  "paper": "https://arxiv.org/html/2604.27147v3",
+  "source_commit": "be485ba40f1d1c163b95ad61112aca6baa13ed22",
+  "source_sha256": "8da781f6902d3c8839603e20fbb8ed0adfc0e5721666806999a106b45bf08cdc",
+  "runtime_archive_sha256": "06ef365e64d7dcccd7507ac3435f46bf25b724679b65c8e1a8d7a060958f43ff",
+  "adapter_version": "paper_e2_practical_inverse_v1",
+  "adapter_sha256": "cbd178bc911bdf7450c2d08886b5c5e4665f27ee68a257509084bef4aa012fcb",
+  "loader_sha256": "cddf4e21e5c5dc0e4e9ad2ab989417a28c2891d407094a34ba66aade0c262c9f",
+  "lora256_sha256": "1ac550f6800fb086986643475ba9ebbec7bb84bd87b9cab3573ec693332232be",
+  "measurement_manifest_sha256": "f0a6b32ea1fd1ba6a1f0ff0e7055680ee32ae39f40f4e9bf44046fd29effac7a",
+  "datasets": ["AFHQ-Dog", "FFHQ"],
+  "tasks": ["sr4", "motion61", "mask64"],
+  "eval_images_per_dataset": 1000,
+  "tuning_images_per_dataset": 50,
+  "expected_eval_outputs": 12000,
+  "seeds": [0],
+  "latent_rng": "For each image independently create one CUDA BF16 seed0 latent; repeat identical bytes within each batch. Same initial noise across images/methods is intentional. Observation seeds are separately frozen per image/task.",
+  "settings": {"resolution": 256, "cfg": 3.5, "sample_mode": "flow_map2", "loss_mode": "pixel", "loss_func": "sum", "dtype": "bfloat16", "attention": "SDPA", "gradient_checkpointing": true},
+  "prompts": {"AFHQ-Dog": "a photo of a dog", "FFHQ": "a photo of a person"},
+  "methods": {
+    "E": {"num_steps": 50, "eta": {"AFHQ-Dog": 6.0, "FFHQ": 6.0}, "nopt": 5, "t_stop": 0.67, "normalize_grad": false},
+    "J": {"num_steps": 200, "eta": {"AFHQ-Dog": 5.0, "FFHQ": 3.0}, "nopt": 1, "t_stop": 1.0, "normalize_grad": true}
+  },
+  "semantics": {
+    "reward": "negative sum of squared pixel residual A(D(z))-y; no pseudo-inverse-weighted latent loss",
+    "E": "At current noise-time sigma, compute separate flow step and clean endpoint. Optimize endpoint with gain eta*(1-sigma)*sigma_next inside every inner update. Add endpoint displacement to the flow step. No additional dt/nopt.",
+    "J": "Delegate unchanged inverse-J: current-state endpoint gradient, unit gradient per item rescaled by stepping velocity norm, outer dt. Not generic post-flow Algorithm5.",
+    "grid": "Preserve full released shifted scheduler grid; insert E exact sigma0.33 cutoff and finish with separate unguided map to sigma0. Actual grid must match the qualified reference grid.",
+    "nominal_vs_actual_NFE": "E nominal100, observed78 transformer invocations; J nominal400, observed400. Record batch invocations and per-image effective invocations separately, plus actual block recomputations and autograd/VAE calls.",
+    "evidence_priority": "E.2 practical update wording plus TableE.1 gradient target and released endpoint construction define this explicit convention. Generic Algorithms5/6 order and Eq18 are not asserted equivalent. This is a declared reconstruction, not resolution of an undocumented author implementation."
+  },
+  "parameter_selection": {"mode": "PUBLISHED_PARAMETER_TRANSFER_NO_SEARCH", "source": "Table E.2", "new_tuning_candidates": 0, "selection_cost_gpu_seconds": 0, "no_retuning_after_smoke": true, "author_grid_recovered": false},
+  "batching": {"per_item_loss_reduction": "sum over pixels, sum across independent batch items", "norm_axes": [1, 2, 3], "qualification_required": true, "GPU_bitwise_equivalence_required": false, "batch_size_is_frozen_execution_profile": true},
+  "metrics": {
+    "primary_per_image": "released CLI PNG PSNR and LPIPS VGG with PIL224/ToTensor[0,1], normalize=False",
+    "sensitivity": "separate native256 LPIPS VGG on [-1,1]; never mix with CLI LPIPS",
+    "SSIM": "pytorch_msssim on PNG ToTensor*255 using pinned defaults",
+    "FID": "torchmetrics1.3.2 Inception2048, PIL Resize299/ToTensor*255/uint8; dataset-level only on all1000 IDs",
+    "KID": "same features; subset50,100 subsets; reset Torch RNG20261102 for each complete dataset/task/method group",
+    "CI": "image-ID bootstrap percentile95%,10000 resamples,NumPy PCG64 seed20261102 for PSNR/SSIM/LPIPS means; no FID CI or equivalence claim",
+    "missing": "explicit missing/failed, reject incomplete group scores; no filename intersection or zero fill"
+  },
+  "execution": {"paid_services_allowed": false, "modal_allowed": false, "cumulative_paid_cap_usd": 10, "matching_allocation_required": true, "initial_authorized_gpu_indices": [0, 1, 2, 3], "initial_max_wall_hours": 10, "extra_gpu_route": "UNRESOLVED_DO_NOT_ASSUME", "extension_beyond_deadline": "requires concrete extension; no automatic assumption from flexible wording", "batch_retry": "no automatic retry of failed/OOM cells; retain attempts", "resume": "reuse only verified complete cell artifacts with identical contract/cell/runner identities; failed cells require explicit recovery"},
+  "deferred": ["reward/VLM/style campaigns", "author-exact data or score-equivalence claim", "new hyperparameter search", "baselines and full NFE curves", "renoise-c", "GenEval numerical equivalence"],
+  "acceptance": "Exact 12,000 unique evaluation cells and 1,000 expected IDs per dataset/task/method; all artifacts and provenance verified. Completion is reconstructed high-NFE E/J evaluation, not all-paper reproduction or headline few-NFE efficacy."
+}
