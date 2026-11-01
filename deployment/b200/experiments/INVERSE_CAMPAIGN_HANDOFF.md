@@ -68,6 +68,14 @@ Closing the bridge does not stop these detached workers. Workers stop at the
 allocation deadline and retain completed cells. `GENERATION_COMPLETE` alone
 does not mean metrics or scientific evaluation are complete.
 
+`advance_inverse_campaign.py` watches the exact existing qualification, then
+runs the CPU scorer canary and independent128-output validator. Only after all
+three pass does it create a new E-only allocation/launch manifest and submit
+the6,000-output stage. Failure stops this transition without retry; the shared
+deadline is preserved. Its detached operation does not require the bridge to
+remain connected. Inspect `events.jsonl`, `blocked.json` or `result.json` in its
+new workflow directory before taking any recovery action; never replay a launch.
+
 `score_inverse_campaign.py` rejects missing/duplicate IDs before scoring each
 complete 1,000-image group. It computes released-CLI PNG PSNR/SSIM/LPIPS and
 separate native256 LPIPS, dataset FID/KID, and deterministic image bootstrap
