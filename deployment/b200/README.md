@@ -1,5 +1,14 @@
 # Portable B200 setup and company replay
 
+The bounded [frozen-input E/J smoke runner](experiments/frozen_smoke.py) runs
+one first cell, then the remaining11 only after that cell completes. Both phases
+share a30-minute deadline and write to new output directories. It preserves the
+released sampler, precreates seeded latent noise outside the observation guard,
+uses verified frozen tensors/states and records images, PSNR,256px LPIPS VGG,
+actual call counts and sigma grids. Its explicit norm/pixel loss and flow_map1
+profile are smoke settings, not the paper-formula contract or an efficacy result.
+Use only the authorized existing company GPU via the guarded bridge; no full launch.
+
 The [2026-11-01 GenEval/VLM/reconstructed-data update](geneval/PREPARATION_HANDOFF.md)
 adds a separate evaluator overlay with Modal B200 technical qualification,
 authorized Skywork weights and explicitly reconstructed image splits. It keeps
