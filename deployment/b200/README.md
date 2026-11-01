@@ -1,5 +1,11 @@
 # Portable B200 setup and company replay
 
+The [inverse practical-paper adapter contract](experiments/PAPER_FORMULA_CONTRACT.md)
+defines a separate E.2/E.3 reconstruction and a matched 12-pair smoke against
+the untouched released inverse sampler. Its tests cover analytic gradients,
+time conversion and a separate unguided cutoff completion. Practical/generic
+algorithm ambiguities are explicit; this does not enable full execution.
+
 The [company frozen-input smoke report](results/frozen-smoke-20261101/REPORT.md)
 records 12/12 completed E/J cells on 2026-11-01, with image/input hashes,
 resolved settings, measured call counts and PSNR/LPIPS. This is an integrated
