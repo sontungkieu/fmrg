@@ -106,14 +106,33 @@ def find_complete(roots, cell, contract_sha, runner_sha):
     return matches[0] if matches else None
 
 
-def prepare(contract_path, base_plan, out):
+def preflight_files(cells, paths):
+    expected={}
+    for cell in cells:
+        entry=cell['observation'];task=cell['task']
+        for path,digest in [
+            (safe_relative(paths['splits'],cell['image_path']),cell['image_sha256']),
+            (safe_relative(paths['obs'],entry['path']),entry['measurement_sha256']),
+            (Path(paths['obs'])/'operators'/(task+'.json'),entry['operator_config_sha256']),
+            (Path(paths['obs'])/'operators'/(task+'.safetensors'),entry['operator_state_sha256'])]:
+            assert expected.setdefault(path,digest)==digest,'Conflicting input identity'
+    total=0
+    for path,digest in expected.items():
+        assert sha(path)==digest, 'Input file hash mismatch'
+        total+=path.stat().st_size
+    return dict(unique_files=len(expected),bytes=total,status='INPUT_FILES_HASH_VERIFIED_BEFORE_MODEL_LOAD')
+
+
+def prepare(contract_path, base_plan, out, splits_root=None):
     contract = json.loads(contract_path.read_text())
     paths = json.loads(base_plan.read_text())['paths']
+    if splits_root is not None:paths['splits']=str(splits_root)
     assert sha(paths['obs_manifest'])==contract['measurement_manifest_sha256']
     man = json.loads(Path(paths['obs_manifest']).read_text())
     eval_cells, tuning_cells = make_cells(man,contract,'eval'),make_cells(man,contract,'tuning')
     assert len(eval_cells)==contract['expected_eval_outputs']
     assert len(tuning_cells)==600
+    verified=preflight_files(eval_cells+tuning_cells,paths)
     # Source and operator identities are pinned before any evaluation outputs exist.
     for name,digest in man['measurement_source']['files'].items():
         assert sha(Path(paths['source'])/name)==digest
@@ -141,7 +160,7 @@ def prepare(contract_path, base_plan, out):
     dump_new(out/'plan.json', dict(protocol='fmrg-inverse-campaign-plan-v1',full_launch_allowed=False,
         contract_sha256=sha(contract_path),paths=paths,eval_cells=12000,tuning_cells=600,
         eval_jsonl_sha256=sha(out/'eval.jsonl'),tuning_jsonl_sha256=sha(out/'tuning.jsonl'),
-        reference_grids=grids,claim='reconstructed',note='Preparation alone does not authorize inference'))
+        reference_grids=grids,input_preflight=verified,claim='reconstructed',note='Preparation alone does not authorize inference'))
     print('INVERSE_PLAN='+canonical(dict(directory=str(out),plan_sha256=sha(out/'plan.json'),
         eval_sha256=sha(out/'eval.jsonl'),expected_eval=12000,expected_tuning=600)),flush=True)
 
@@ -151,4 +170,5 @@ if __name__=='__main__':
     p.add_argument('--contract',type=Path,required=True)
     p.add_argument('--base-plan',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
-    a = p.parse_args(); prepare(a.contract,a.base_plan,a.out)
+    p.add_argument('--splits-root',type=Path)
+    a = p.parse_args(); prepare(a.contract,a.base_plan,a.out,a.splits_root)

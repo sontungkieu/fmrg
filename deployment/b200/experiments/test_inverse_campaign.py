@@ -4,7 +4,8 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from inverse_campaign import batches, canonical, dump_new, find_complete, make_cells, safe_relative, sha
+from inverse_campaign import batches, canonical, dump_new, find_complete, make_cells, preflight_files, safe_relative, sha
+from start_inverse_campaign import worker_args
 
 
 class CampaignGuards(unittest.TestCase):
@@ -69,6 +70,21 @@ class CampaignGuards(unittest.TestCase):
             p=Path(tmp)/'x.json';dump_new(p,dict(v=1))
             with self.assertRaises(FileExistsError):dump_new(p,dict(v=2))
             self.assertEqual(json.loads(p.read_text()),dict(v=1))
+
+    def test_missing_image_is_rejected_by_cpu_preflight(self):
+        cell=make_cells(self.man,self.contract,'eval')[0]
+        with tempfile.TemporaryDirectory() as root:
+            with self.assertRaises(FileNotFoundError):
+                preflight_files([cell],dict(splits=root,obs=root))
+
+    def test_e_only_stage_does_not_assign_j(self):
+        cells=[c for c in make_cells(self.man,self.contract,'eval') if c['method']=='E']
+        ids=[c['cell_id'] for rank in range(4) for group in batches(cells,2,rank,4) for c in group]
+        self.assertEqual(len(ids),18)
+        self.assertEqual(set(ids),{c['cell_id'] for c in cells})
+        args=worker_args(dict(contract='contract',plan='plan',allocation='alloc',gpu_uuids=['a','b','c','d'],batch_size=16,methods=['E']),Path('out'),2,False)
+        self.assertEqual(args[args.index('--methods')+1:args.index('--methods')+2],['E'])
+        self.assertEqual(args[args.index('--gpu')+1],'c')
 
 
 if __name__=='__main__':unittest.main()

@@ -9,7 +9,7 @@ import signal
 import sys
 import time
 
-from inverse_campaign import batches, canonical, dump_new, find_complete, safe_relative, sha
+from inverse_campaign import batches, canonical, dump_new, find_complete, preflight_files, safe_relative, sha
 
 
 def main():
@@ -23,6 +23,7 @@ def main():
     p.add_argument('--qualify',action='store_true')
     p.add_argument('--qualify-task',choices=['sr4','motion61','mask64'])
     p.add_argument('--qualify-dataset',choices=['AFHQ-Dog','FFHQ'])
+    p.add_argument('--methods',choices=['E','J'],nargs='+',default=['E','J'])
     p.add_argument('--max-batches',type=int)
     p.add_argument('--resume',type=Path,action='append',default=[])
     a=p.parse_args()
@@ -42,12 +43,15 @@ def main():
     assert all(x['split']==('evaluation' if split=='eval' else 'tuning') for x in cells)
     if not a.qualify:
         assert alloc.get('full_launch_allowed') is True
+        assert set(a.methods)<=set(alloc['allowed_methods'])
         q=json.loads(Path(alloc['qualification_receipt']).read_text())
         assert sha(alloc['qualification_receipt'])==alloc['qualification_sha256']
         assert q['status']=='PASS_FULL_CONFIG_BATCH'
         assert q['runner_sha256']==runner_sha and q['contract_sha256']==contract_sha
         assert q['batch_size']==a.batch_size and q['full_launch_allowed'] is False
     jobs=batches(cells,a.batch_size,a.rank,a.world)
+    if not a.qualify:
+        jobs=batches([c for c in cells if c['method'] in a.methods],a.batch_size,a.rank,a.world)
     if a.qualify:
         # Only first batch for each configured dataset/task/method group.
         seen=set();selected=[]
@@ -69,13 +73,14 @@ def main():
     summary=dict(protocol='fmrg-inverse-worker-v1',full_launch_allowed=not a.qualify,
         split=split,contract_sha256=contract_sha,runner_sha256=runner_sha,
         plan_sha256=sha(a.plan),cells_sha256=sha(a.cells),allocation_sha256=sha(a.allocation),
-        rank=a.rank,world=a.world,batch_size=a.batch_size,gpu_uuid=a.gpu,
+        rank=a.rank,world=a.world,batch_size=a.batch_size,gpu_uuid=a.gpu,methods=a.methods,
         planned_cells=sum(map(len,jobs)),deadline_unix=deadline,claim='reconstructed')
     def timeout(*args):
         raise TimeoutError('ALLOCATION_DEADLINE')
     signal.signal(signal.SIGALRM,timeout);signal.alarm(max(1,int(deadline-time.time())))
     try:
         paths=plan['paths']
+        summary['input_preflight']=preflight_files([cell for job in jobs for cell in job],paths)
         sys.path.insert(0,paths['source']);sys.path.insert(0,paths['loader'])
         sys.path.insert(0,str(a.plan.parent))
         import torch

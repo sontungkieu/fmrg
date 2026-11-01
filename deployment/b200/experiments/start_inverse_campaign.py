@@ -22,7 +22,7 @@ def worker_args(spec, out, rank, qualify):
         dataset,task=[('AFHQ-Dog','sr4'),('AFHQ-Dog','motion61'),('AFHQ-Dog','mask64'),('FFHQ','sr4')][rank]
         result+=['--qualify','--qualify-dataset',dataset,'--qualify-task',task]
     else:
-        result+=['--rank',str(rank),'--world','4']
+        result+=['--rank',str(rank),'--world','4','--methods',*spec['methods']]
         for prior in spec.get('resume',[]):result+=['--resume',prior]
     return result
 
@@ -35,6 +35,8 @@ def main():
     a=p.parse_args()
     spec=json.loads(a.spec.read_text());qualify=spec['mode']=='qualify'
     assert spec['mode'] in ['qualify','full']
+    if not qualify:
+        assert spec['methods'] in [['E'],['J'],['E','J']]
     assert len(spec['gpu_uuids'])==len(set(spec['gpu_uuids']))==4
     assert spec['batch_size']==16
     for name,digest in spec['code_sha256'].items():
@@ -58,7 +60,7 @@ def main():
                 stdout=log,stderr=subprocess.STDOUT,env=env,start_new_session=True)
         dump_new(a.out/'launch.json',dict(pid=child.pid,mode=spec['mode'],spec_sha256=sha(a.spec),
             deadline_unix=allocation['deadline_unix'],full_launch_allowed=not qualify,
-            expected_outputs=128 if qualify else 12000))
+            expected_outputs=128 if qualify else 6000*len(spec['methods'])))
         print('INVERSE_SUPERVISOR_SUBMITTED='+canonical(dict(pid=child.pid,directory=str(a.out),mode=spec['mode'])),flush=True)
         return
     children=[];codes={};summaries=[]
@@ -93,7 +95,11 @@ def main():
                 exact_E50_J200=True,codes=codes,summaries=summaries)
             dump_new(a.out/'qualification.json',receipt)
         else:
-            good=good and len(ids)==12000
+            plan=json.loads(Path(spec['plan']).read_text())
+            cells_path=Path(spec['plan']).parent/'eval.jsonl'
+            assert sha(cells_path)==plan['eval_jsonl_sha256']
+            expected={c['cell_id'] for c in map(json.loads,cells_path.read_text().splitlines()) if c['method'] in spec['methods']}
+            good=good and set(ids)==expected and len(ids)==6000*len(spec['methods'])
         dump_new(a.out/'completion.json',dict(status=('QUALIFIED' if qualify else 'GENERATION_COMPLETE_METRICS_PENDING') if good else 'PARTIAL_OR_FAILED',
             full_launch_allowed=not qualify,codes=codes,completed_or_verified=len(ids),summaries=summaries))
     except BaseException as exc:

@@ -43,6 +43,12 @@ not evaluation results. Full-config batch qualification must cover E50/J200,
 all three operators and both class prompts before evaluation launch. Batch
 size16 is an execution profile, not a bitwise-equivalence claim.
 
+The initial existing four-GPU group runs the E-only stage (6,000 outputs).
+The J-only stage (6,000 outputs) is prepared separately for the additional
+four-GPU group when its access/allocation is supplied. Method filters precede
+sharding and the supervisor checks the exact expected stage IDs. Neither stage
+alone is reported as the complete12,000-output campaign.
+
 `inverse_campaign.py` validates split identities and disjointness, freezes
 12,000 content-addressed cells, verifies operator/source pins and copies the
 actual qualified reference grids. It does not generate observations or images.
@@ -82,6 +88,13 @@ than `eval`; this was corrected without changing IDs/data. Another prelaunch
 hash check rejected a Windows-CRLF hash of an LF-transferred allocation file.
 Both failures occurred before neural qualification/launch and their bridge
 receipts are retained. Hashes are computed over the actual transported bytes.
+
+The first full-config qualification then found only the two smoke PNGs had
+been extracted at the old split root; it stopped before any sampling (0 outputs).
+The full archive was already staged and verified. Recovery extracts all2,100
+images into a new root without changing hashes/IDs, and preflights every image
+and observation file before loading the model. Old split paths and failed
+qualification logs are preserved; the allocation deadline is not reset.
 
 Before reporting final success: verify the expected unique12,000 cells, raw
 artifacts and exact1,000 IDs in every group; then collect scorer outputs and
