@@ -1,0 +1,139 @@
+{
+  "status": "PASS_TECHNICAL_16_TUNING_OUTPUTS",
+  "full_launch_allowed": false,
+  "dataset_score": "NOT_COMPUTED",
+  "rows": [
+    {
+      "cell_id": "e5ef4bed19f0ed0a7e8589bb",
+      "original_id": "shard0-row00089",
+      "psnr": 27.09220602648044,
+      "ssim": 0.7488817572593689,
+      "lpips_cli": 0.23937422037124634,
+      "lpips_native256": 0.3106924593448639
+    },
+    {
+      "cell_id": "5fd141ce3c508fcebd0479f4",
+      "original_id": "shard0-row00160",
+      "psnr": 23.87660998668068,
+      "ssim": 0.6781620979309082,
+      "lpips_cli": 0.27863192558288574,
+      "lpips_native256": 0.3621346950531006
+    },
+    {
+      "cell_id": "a17d554c5e31953790bd315f",
+      "original_id": "shard0-row00216",
+      "psnr": 28.439539962091075,
+      "ssim": 0.8022305369377136,
+      "lpips_cli": 0.24539044499397278,
+      "lpips_native256": 0.3333399295806885
+    },
+    {
+      "cell_id": "e9274e28d16afd11f011d554",
+      "original_id": "shard0-row00244",
+      "psnr": 24.43591766643738,
+      "ssim": 0.7359192371368408,
+      "lpips_cli": 0.2748587727546692,
+      "lpips_native256": 0.3861508369445801
+    },
+    {
+      "cell_id": "0335d52b2faf66de68d46b35",
+      "original_id": "shard0-row00429",
+      "psnr": 28.256663924281803,
+      "ssim": 0.767538845539093,
+      "lpips_cli": 0.21893157064914703,
+      "lpips_native256": 0.28756576776504517
+    },
+    {
+      "cell_id": "d3f7bd73d2c63571d07892a3",
+      "original_id": "shard0-row00450",
+      "psnr": 31.11529388904504,
+      "ssim": 0.8066436648368835,
+      "lpips_cli": 0.2506677806377411,
+      "lpips_native256": 0.34939736127853394
+    },
+    {
+      "cell_id": "4a1e5fc5d990f82289414a4a",
+      "original_id": "shard0-row00589",
+      "psnr": 30.07494962963657,
+      "ssim": 0.8379430770874023,
+      "lpips_cli": 0.18956609070301056,
+      "lpips_native256": 0.25234413146972656
+    },
+    {
+      "cell_id": "6a73497d9a444780a0f834c5",
+      "original_id": "shard0-row00711",
+      "psnr": 32.54932416298387,
+      "ssim": 0.8785707950592041,
+      "lpips_cli": 0.19446399807929993,
+      "lpips_native256": 0.28672584891319275
+    },
+    {
+      "cell_id": "ff6557ab7db5196fe2a35597",
+      "original_id": "shard0-row00822",
+      "psnr": 30.041023796717035,
+      "ssim": 0.7773348689079285,
+      "lpips_cli": 0.29390275478363037,
+      "lpips_native256": 0.3468012809753418
+    },
+    {
+      "cell_id": "1612c00a933a4c287245748b",
+      "original_id": "shard0-row00962",
+      "psnr": 28.875845782671398,
+      "ssim": 0.7221506237983704,
+      "lpips_cli": 0.2820773124694824,
+      "lpips_native256": 0.3472500741481781
+    },
+    {
+      "cell_id": "30b015fde316e95ec7312ddf",
+      "original_id": "shard0-row01007",
+      "psnr": 26.0676628530336,
+      "ssim": 0.7493183016777039,
+      "lpips_cli": 0.20248086750507355,
+      "lpips_native256": 0.2771589756011963
+    },
+    {
+      "cell_id": "d7656e4e4237935f4a220766",
+      "original_id": "shard0-row01086",
+      "psnr": 27.40754808644006,
+      "ssim": 0.7371845245361328,
+      "lpips_cli": 0.24021297693252563,
+      "lpips_native256": 0.3317754566669464
+    },
+    {
+      "cell_id": "5fa17ad3c38a70df7b9781e6",
+      "original_id": "shard0-row01128",
+      "psnr": 24.93798194490248,
+      "ssim": 0.6558974385261536,
+      "lpips_cli": 0.29232606291770935,
+      "lpips_native256": 0.3876379132270813
+    },
+    {
+      "cell_id": "2f0e57d5f2e879bab57450da",
+      "original_id": "shard0-row01141",
+      "psnr": 26.700601416032818,
+      "ssim": 0.7532621026039124,
+      "lpips_cli": 0.22629302740097046,
+      "lpips_native256": 0.29882898926734924
+    },
+    {
+      "cell_id": "e4e0d83e38e6111ec971a860",
+      "original_id": "shard0-row01268",
+      "psnr": 28.099461945443135,
+      "ssim": 0.7266826629638672,
+      "lpips_cli": 0.25858959555625916,
+      "lpips_native256": 0.33431684970855713
+    },
+    {
+      "cell_id": "588869e66a85fc3a69e16a48",
+      "original_id": "shard0-row01300",
+      "psnr": 29.380097905924075,
+      "ssim": 0.8570231795310974,
+      "lpips_cli": 0.20028279721736908,
+      "lpips_native256": 0.26891303062438965
+    }
+  ],
+  "scorer_sha256": "3b96e45285b9def2dfe21a75dd021d70381bb5ea3ef29af4ce4117e9e68c1341",
+  "contract_sha256": "9c567088e2d186c997bbc9b3114b2ade730026ee554d0d7cf90a7f012f7ed0c6",
+  "fid_features_finite": true,
+  "seconds": 15.323675557039678
+}

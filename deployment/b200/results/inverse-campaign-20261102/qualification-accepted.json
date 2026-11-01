@@ -1,0 +1,27 @@
+{
+  "status": "PASS_FULL_CONFIG_BATCH",
+  "full_launch_allowed": false,
+  "images": 128,
+  "batch_size": 16,
+  "contract_sha256": "9c567088e2d186c997bbc9b3114b2ade730026ee554d0d7cf90a7f012f7ed0c6",
+  "runner_sha256": "8ecd385dfea35f3a7327a0267e52bbc1d1c0990653acef240ff775de9be287ae",
+  "qualification_sha256": "fe8386e50794ab51bd2a56aaae4d79024345c5d5e04606fd7bd84db06a2056c4",
+  "scorer_canary_sha256": "f7e4820aba1bac17a40dd7ed22e5629fffefebce9328e92ae1da391ffe9943d3",
+  "verifier_sha256": "30014e4cabf7445d65c87e2a30aa412b61ed7a2d4b0e9aa18bdb15cf7777a6d2",
+  "all_output_files_payloads_and_PNG_verified": true,
+  "one_seed0_latent_digest": "7cac343bf4e5a5bf5df2b2d9b5e38d27b5d064b77de485b9852d592afdd6f621",
+  "seconds_per_image": {
+    "AFHQ-Dog/sr4/E": 2.593156756745884,
+    "AFHQ-Dog/sr4/J": 19.76675810062443,
+    "AFHQ-Dog/motion61/E": 2.6885269310732838,
+    "AFHQ-Dog/motion61/J": 19.91940640192479,
+    "AFHQ-Dog/mask64/E": 2.5807834309816826,
+    "AFHQ-Dog/mask64/J": 19.916130571829854,
+    "FFHQ/sr4/E": 2.6099368501163553,
+    "FFHQ/sr4/J": 19.963014295790344
+  },
+  "peak_gib": 38.600403785705566,
+  "actual_E_forwards": 78,
+  "actual_J_forwards": 400,
+  "no_efficacy_or_bitwise_equivalence_claim": true
+}

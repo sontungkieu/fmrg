@@ -6,6 +6,10 @@ new user-authorized 12,000-output evaluation scope. They replace the old global
 blockers for this scope with explicit reconstructed-data/practical-formula
 conventions; launch still requires the matching batch qualification and bounded
 company allocation. Reward/VLM/style and all-paper execution remain separate.
+The [2026-11-02 launch checkpoint](results/inverse-campaign-20261102/REPORT.md)
+records the E-only6,000-output stage on4 company B200s after128-output full-config
+qualification, independent artifact verification and CPU scorer canary. J is
+prepared separately for the additional cluster; launched is not completed.
 
 The [inverse practical-paper adapter contract](experiments/PAPER_FORMULA_CONTRACT.md)
 defines a separate E.2/E.3 reconstruction and a matched 12-pair smoke against

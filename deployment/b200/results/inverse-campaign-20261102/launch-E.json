@@ -1,0 +1,76 @@
+{
+  "status": "FULL_E_STAGE_SUBMITTED_NOT_COMPLETE",
+  "full_launch_allowed": true,
+  "methods": [
+    "E"
+  ],
+  "expected_outputs": 6000,
+  "generation_out": "fmrg_all/runs/fmrg-inverse-E-evaluation-20261102-v1",
+  "contract_sha256": "9c567088e2d186c997bbc9b3114b2ade730026ee554d0d7cf90a7f012f7ed0c6",
+  "plan_sha256": "ebfec0740141c00fceb3806f671d9f602abbbfdad0485b67edffda5e4f4f7e28",
+  "allocation_sha256": "beab82784210d9aa6ce6f56798e15015d6cfcad273934e43e761ac979669640b",
+  "qualification_accepted_sha256": "bfc83929fe0fed26e31cff5805b51b21e04c3400eb84091302743a063d44d284",
+  "launch_spec_sha256": "852fb42581eb152cc858dc5fcfe1df7690d25fd6854d7b967b1880bb3b8b2e50",
+  "deadline_unix": 1793590154.0,
+  "J_stage": "WAITING_FOR_OTHER_CLUSTER_ROUTE",
+  "paid_services_used": false,
+  "modal_launched": false,
+  "cumulative_cap_usd": 10,
+  "protocol": "fmrg-reconstructed-inverse-public-launch-v1",
+  "date": "2026-11-02",
+  "observed_status": "FOUR_WORKERS_ALIVE_LOADING_MODEL",
+  "evaluation_outputs_verified_at_snapshot": 0,
+  "parent_campaign_expected_outputs": 12000,
+  "E_expected_outputs": 6000,
+  "J_expected_outputs": 6000,
+  "scientific_scope": "Reconstructed high-NFE practical E/J; not all-paper or author-exact reproduction",
+  "raw_company_launch_receipt_sha256": "2bff471d53d6791b4a28823e6434a27eccf967096bc6de87ac63161a8b6630cd",
+  "source_git_commit": "a23d083fc1a60ec7ffa5026ba21be26b9ae050c6",
+  "worker_sha256": "8ecd385dfea35f3a7327a0267e52bbc1d1c0990653acef240ff775de9be287ae",
+  "input_preflight": {
+    "unique_files": 8406,
+    "bytes": 3628076264,
+    "status": "INPUT_FILES_HASH_VERIFIED_BEFORE_MODEL_LOAD"
+  },
+  "independent_qualification": {
+    "images": 128,
+    "full_config": true,
+    "all_three_tasks": true,
+    "both_prompts": true,
+    "artifacts": "All containers/payloads,seed0 BF16 latent,PNG quantization and actual calls verified",
+    "receipt_sha256": "bfc83929fe0fed26e31cff5805b51b21e04c3400eb84091302743a063d44d284"
+  },
+  "cpu_tests": {
+    "status": "PASS_9_OF_9",
+    "command_id": "5e45e0ca-458b-4a52-9574-a7bb45cb53f0"
+  },
+  "scope_gates": {
+    "inverse_E": true,
+    "inverse_J": "requires additional route/allocation",
+    "reward": false,
+    "VLM": false,
+    "style": false,
+    "all_paper": false
+  },
+  "deadline_Asia_Saigon": "2026-11-02T10:29:14+07:00",
+  "additional_paid_services_usd": 0,
+  "fresh_provider_billing_read": false,
+  "failures_preserved": [
+    {
+      "stage": "planner",
+      "reason": "Manifest uses evaluation,not eval; no input IDs changed"
+    },
+    {
+      "stage": "prelaunch",
+      "reason": "Windows CRLF/LF allocation hash mismatch rejected before launch"
+    },
+    {
+      "stage": "qualification-v2",
+      "reason": "Old split root contained only2 smoke PNGs;0 outputs; all4 workers exited1"
+    },
+    {
+      "stage": "guard",
+      "reason": "Output name token eval rejected; unused new output renamed evaluation; guard unchanged"
+    }
+  ]
+}
