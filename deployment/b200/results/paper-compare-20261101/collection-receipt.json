@@ -1,0 +1,41 @@
+{
+  "protocol": "fmrg-paper-compare-collection-receipt-v1",
+  "date": "2026-11-02",
+  "status": "COLLECTED_AND_VERIFIED_12_PAIRS_24_OUTPUTS",
+  "full_launch_allowed": false,
+  "terminal": "8",
+  "same_instance_as_smoke": true,
+  "first_summary_sha256": "782330b075e916dc8a453e575f7145a0f5700a7453545e95366e38a2bbf01ae5",
+  "rest_summary_sha256": "4e0bb25a8ca4b97aff9848f8f7ccfc2d4005d3b63fb663876eaaa81c15d0a1b3",
+  "raw_report_sha256": "3c0721426c854b196b0354be39e3f6cfbf3f59bec3f418b450975280c85f3cae",
+  "raw_report_bytes": 38035,
+  "public_report_sha256": "1be88d5279ce746aea8dd303405f8b3a91157b3f7f9ec9225a8a39fd4ee969bc",
+  "public_markdown_sha256": "868dfac69a0558ccb52944f6455def2a5a023b94488d2989c786656da5ce3fbb",
+  "collector_command_id": "fb0c168d-30bc-4899-8198-ead196c1db5c",
+  "wrapper_exit": 0,
+  "runner_ok": true,
+  "payload_exit": 0,
+  "collector_sha256": "8e9edeffecaf05a44547176c55eae25b32deb5252c3f40d1af5c773978159842",
+  "expected_pairs": 12,
+  "completed_pairs": 12,
+  "outputs": 24,
+  "max_independent_psnr_error_db": 1.103086965770217e-06,
+  "J_control": {
+    "pairs": 6,
+    "bitwise_equal": 0,
+    "max_abs_prediction_diff": 1.046875,
+    "max_abs_delta_psnr": 0.8123170205938983,
+    "equivalence_claim": false
+  },
+  "sampling_seconds": {
+    "released": 453.5924711744301,
+    "paper": 449.03025478310883
+  },
+  "peak_gpu_allocated_gib": 23.635728359222412,
+  "new_sampling": false,
+  "paid_services_used": false,
+  "modal_launched": false,
+  "cumulative_cap_usd": 10,
+  "fresh_provider_billing_read": false,
+  "interpretation": "Technical smoke/output audit; no efficacy or equivalence claim."
+}

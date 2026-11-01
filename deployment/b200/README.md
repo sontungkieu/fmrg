@@ -6,6 +6,13 @@ the untouched released inverse sampler. Its tests cover analytic gradients,
 time conversion and a separate unguided cutoff completion. Practical/generic
 algorithm ambiguities are explicit; this does not enable full execution.
 
+The [matched comparison report](results/paper-compare-20261101/REPORT.md),
+collected on 2026-11-02, verifies all 12 pairs / 24 saved outputs without
+repeating sampling. Independent CPU PSNR and released-CLI LPIPS rescoring,
+artifact hashes and E gain/cutoff traces passed. J A/A controls are not bitwise
+equal (maximum absolute PSNR delta 0.812317 dB); this technical comparison
+does not establish equivalence, efficacy or full-paper reproduction.
+
 The [company frozen-input smoke report](results/frozen-smoke-20261101/REPORT.md)
 records 12/12 completed E/J cells on 2026-11-01, with image/input hashes,
 resolved settings, measured call counts and PSNR/LPIPS. This is an integrated
